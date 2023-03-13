@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="no_pendaftaran" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4b51f1e8-c69c-4568-9bc6-6d1c8395ccc9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="969c5092-74be-454e-8660-66ceae328c20">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT
+no_pendaftaran
+FROM
+fleet.fleet_department
+WHERE
+brand_id = null
+
+]]>
+		</queryString>
+		<field name="no_pendaftaran" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="no_pendaftaran"/>
+			<property name="com.jaspersoft.studio.field.label" value="no_pendaftaran"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT *
+FROM fleet.fleet_department
+LIMIT 1]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="user_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="user_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="user_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="state_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="state_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="state_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="cawangan_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="cawangan_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="cawangan_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="placement_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="placement_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="placement_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="created_by" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="created_by"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_by"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="no_pendaftaran" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="no_pendaftaran"/>
+		<property name="com.jaspersoft.studio.field.label" value="no_pendaftaran"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="no_id_jabatan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="no_id_jabatan"/>
+		<property name="com.jaspersoft.studio.field.label" value="no_id_jabatan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="no_jkr" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="no_jkr"/>
+		<property name="com.jaspersoft.studio.field.label" value="no_jkr"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="category_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="category_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="category_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="sub_category_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="sub_category_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="sub_category_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="sub_category_type_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="sub_category_type_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="sub_category_type_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="brand_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="brand_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="brand_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="model_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="model_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="model_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="no_chasis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="no_chasis"/>
+		<property name="com.jaspersoft.studio.field.label" value="no_chasis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="no_engine" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="no_engine"/>
+		<property name="com.jaspersoft.studio.field.label" value="no_engine"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="status"/>
+		<property name="com.jaspersoft.studio.field.label" value="status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="tarikh_belian" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="tarikh_belian"/>
+		<property name="com.jaspersoft.studio.field.label" value="tarikh_belian"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="no_resit" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="no_resit"/>
+		<property name="com.jaspersoft.studio.field.label" value="no_resit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="pembeli" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="pembeli"/>
+		<property name="com.jaspersoft.studio.field.label" value="pembeli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="vapp_status_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="vapp_status_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="vapp_status_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="comment" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="comment"/>
+		<property name="com.jaspersoft.studio.field.label" value="comment"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="updated_at" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="no_loji" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="no_loji"/>
+		<property name="com.jaspersoft.studio.field.label" value="no_loji"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="tarikh_cukai_jalan" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="tarikh_cukai_jalan"/>
+		<property name="com.jaspersoft.studio.field.label" value="tarikh_cukai_jalan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="harga_perolehan" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="harga_perolehan"/>
+		<property name="com.jaspersoft.studio.field.label" value="harga_perolehan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="tarikh_pembelian_kenderaan" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="tarikh_pembelian_kenderaan"/>
+		<property name="com.jaspersoft.studio.field.label" value="tarikh_pembelian_kenderaan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="no_lo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="no_lo"/>
+		<property name="com.jaspersoft.studio.field.label" value="no_lo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="tarikh_pemeriksaan_fizikal" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="tarikh_pemeriksaan_fizikal"/>
+		<property name="com.jaspersoft.studio.field.label" value="tarikh_pemeriksaan_fizikal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="tarikh_pemeriksaan_keselamatan" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="tarikh_pemeriksaan_keselamatan"/>
+		<property name="com.jaspersoft.studio.field.label" value="tarikh_pemeriksaan_keselamatan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="manufacture_year" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="manufacture_year"/>
+		<property name="com.jaspersoft.studio.field.label" value="manufacture_year"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="tarikh_kemaskini" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="tarikh_kemaskini"/>
+		<property name="com.jaspersoft.studio.field.label" value="tarikh_kemaskini"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="acqDt" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="acqDt"/>
+		<property name="com.jaspersoft.studio.field.label" value="acqDt"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+		<fieldDescription><![CDATA[acquisition]]></fieldDescription>
+	</field>
+	<field name="ref_table_type_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="ref_table_type_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="ref_table_type_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="vehicle_status_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="vehicle_status_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="vehicle_status_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="person_incharge_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="person_incharge_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="person_incharge_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="main_driver_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="main_driver_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="main_driver_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="updated_by" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="updated_by"/>
+		<property name="com.jaspersoft.studio.field.label" value="updated_by"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="owner_type_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="owner_type_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="owner_type_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<field name="disaster_ready" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="disaster_ready"/>
+		<property name="com.jaspersoft.studio.field.label" value="disaster_ready"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="560" height="44" uuid="e9ee01c9-bae7-4fe6-8d7a-4e3b33aa0a54"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times" size="24"/>
+				</textElement>
+				<text><![CDATA[Senarai Kenderaan Dari Fleet Department]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="236">
+			<componentElement>
+				<reportElement x="20" y="19" width="511" height="101" uuid="fa4e4052-a58c-4b8d-94e5-8a71835dff44">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="54369588-fc0d-4c5d-bd52-254172cff5c5">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="200" uuid="27b94f81-3577-40ab-95dc-29f953ec2fd7">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="200" height="30" uuid="7d591c3d-a0bc-4aa5-ae2e-4bfaf70357f6"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="16"/>
+								</textElement>
+								<text><![CDATA[No.]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="200" height="30" uuid="c3c8d560-5563-47cc-8c53-38ed20a4c084"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="311" uuid="5c5385a0-a1b6-4977-83e8-390974487cb4">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="311" height="30" uuid="82dab72c-e2fc-4caa-9e15-e41e883adde9"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="16"/>
+								</textElement>
+								<text><![CDATA[Static Text]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="311" height="30" uuid="d1304541-f4b6-4966-967b-86bda95a4794"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{no_pendaftaran}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

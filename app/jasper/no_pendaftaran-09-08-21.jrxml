@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="no_pendaftaran" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4b51f1e8-c69c-4568-9bc6-6d1c8395ccc9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT no_pendaftaran
+FROM fleet.fleet_department]]>
+	</queryString>
+	<field name="no_pendaftaran" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="no_pendaftaran"/>
+		<property name="com.jaspersoft.studio.field.label" value="no_pendaftaran"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_department"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="50">
+			<textField>
+				<reportElement x="200" y="1" width="131" height="41" uuid="7f111f66-18cf-4836-95c4-6b011e7ee43b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{no_pendaftaran}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

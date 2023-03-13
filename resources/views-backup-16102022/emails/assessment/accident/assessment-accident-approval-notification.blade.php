@@ -1,0 +1,116 @@
+{{-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ $details['title'] }}</title>
+</head>
+
+<body>
+    Hi Pemohon.
+    Di Bawah adalah senarai permohonan kenderaan<br/>
+    @if (count($details['assessment_accident_vehicle_list']) > 0)
+        <table>
+            <thead>
+                <th>Bil</th>
+                <th>No Pendaftaran</th>
+                <th>Status</th>
+                <th>Pautan</th>
+            </thead>
+            <tbody>
+                @foreach ($details['assessment_accident_vehicle_list'] as $assessment_accident_vehicle)
+                <tr>
+                    <td>{{$loop->index+1}}</td>
+                    <td>{{$assessment_accident_vehicle->plate_no}}</td>
+                    <td>{{$assessment_accident_vehicle->hasAssessmentVehicleStatus->desc}}</td>
+                    <td>
+                        <a href="{{route('.redirect', [
+                            'redirectTo' => route('assessment.accident.register', ['id' => $assessment_accident_vehicle->hasAssessmentDetail->id, 'tab' => 5])]
+                        )}}">Pautan</a>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    @endif
+
+    <p>Sekian, Terima Kasih.</p>
+</body>
+
+</html> --}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ $details['title'] }}</title>
+</head>
+
+<body>
+    <div>
+    <div style="max-width:500px;font-size:12px;font-family:Arial, Helvetica, sans-serif">
+        Assalamualaikum / Salam Sejahtera<br/><br/>
+        Tuan / Puan <br><br>
+        {{$details['applicant_name']}} <br><br>
+        Permohonan penilaian anda dengan No. Rujukan <b>{{$details['no_rujukan']}}</b> telah berjaya dihantar.
+    Tarikh dan masa temujanji akan dimaklumkan kelak. Segala pertanyaan berkaitan permohonan boleh diajukan kepada  {{$details['worksyop']}}</div>
+    <br/><br/>
+
+    No. Pendaftaran: <b>{{$details['no_pendaftaran']}}</b>
+    <br/><br/><br/>
+
+    Sekian, terima kasih.
+    <br/>
+
+    <div style="font-weight: bold">{{$details['worksyop']}}</div>
+    <br/><br/>
+    <div style="max-width: 600px;color:#000000">
+        <div>Urusetia</div><br/>
+        <img href="http://spakat.cubixi.com/my-assets/img/spakat-small-min.png" width="60">
+        <br>
+        <span>Cawangan Kejuruteraan Mekanikal, </span>
+        <span>JKR Woksyop Persekutuan</span>
+        <div>No 2, Jalan Arowana, 55300 Kuala Lumpur,</div><div class="address">Wilayah Persekutuan Kuala Lumpur</div>
+        <div style="position:relative;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            padding:0px;
+            height:35px;
+            display: inline-block;
+            width: fit-content;
+            font-size: 12px;
+            height:35px;
+            margin-top:20px;">
+            <div style="display: inline-block;
+                padding-left:0px;
+                padding-right:10px;
+                color:#ffffff;
+                font-size: 12px;
+                height:35px;">
+                <img href="http://spakat.cubixi.com/my-assets/img/envelope.jpg" width="60"></div>
+            <div style="position: relative;
+                top:0px;
+                right:0px;
+                font-family:Arial, Helvetica, sans-serif;
+                -webkit-border-radius: 20px;
+                -moz-border-radius: 20px;
+                border-radius: 20px;
+                background-color: #e9b600;
+                height:35px;
+                line-height:35px;
+                font-size: 12px;
+                color:#22282b;
+                padding-left:20px;
+                padding-right:20px;
+                padding-top:0px;
+                padding-bottom:9px;
+                margin-top:0px;
+                margin-bottom: 0px;
+                display: inline-block;
+                cursor: pointer;text-decoration:none">spakat@jkr.gov.my</div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

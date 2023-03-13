@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="assessment_currvalue_checklist_tyre" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="054894ec-2e9e-4754-ab59-81062444d9a0">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SpakatLocal"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="asset_path" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/Users/faridblaster/git/spakat/public/my-assets"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="document_no" class="java.lang.String"/>
+	<parameter name="report_title" class="java.lang.String"/>
+	<parameter name="produce_no" class="java.lang.String"/>
+	<parameter name="amendment_no" class="java.lang.String"/>
+	<parameter name="amendment_dt" class="java.lang.String"/>
+	<parameter name="assessment_type_id" class="java.lang.String"/>
+	<parameter name="vehicle_id" class="java.lang.String"/>
+	<parameter name="foremen_name" class="java.lang.String"/>
+	<parameter name="foremen_date" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select a.evaluation_currvalue_type, a.original_price, a.current_price, a.market_price, a.estimate_repair,
+a.estimate_price, a.metal_price, a.metal_weight::int,
+b.odo_read::int, b.transmission, c.desc as fuel_desc, b.wheel_type, b.total_seat,
+a.engine_no, a.chasis_no,
+d.name as category_name, e.name as subcategory_name, f.name as subcategory_type_name,
+g.name as brand_name, a.model_name,
+b.evaluation_type,
+b.bottom_part_cond, b.inner_part_cond, b.outer_part_cond,
+b.accessories_detail,
+b.engine_system, b.engine_system_check::int, 
+b.trans_system, b.trans_system_check::int,
+b.susp_system, b.susp_system_check::int, 
+b.brek_system, b.brek_system_check::int, 
+b.wiring_system, b.wiring_system_check::int, 
+b.aircond_system, b.aircond_system_check::int,
+b.tyre_front_left_percentage::int, b.tyre_year_fl, b.tyre_front_right_percentage::int, b.tyre_year_fr,
+b.tyre_back_left_percentage::int, b.tyre_year_rl, b.tyre_back_right_percentage::int, b.tyre_year_rr
+from assessment.assessment_currvalue_vehicle a
+join assessment.assessment_form_check_lvl1 b on b.vehicle_id = $P!{vehicle_id} and b.assessment_type_id = $P!{assessment_type_id}
+left join public.ref_engine_fuel_type c on c.id = b.fuel_type_id
+left join public.ref_category d on d.id = a.category_id
+left join public.ref_sub_category e on e.id = a.sub_category_id
+left join public.ref_sub_category_type f on f.id = a.sub_category_type_id
+left join vehicles.brands g on g.id = a.vehicle_brand_id
+where a.id = $P!{vehicle_id}]]>
+	</queryString>
+	<field name="evaluation_currvalue_type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="evaluation_currvalue_type"/>
+		<property name="com.jaspersoft.studio.field.label" value="evaluation_currvalue_type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_currvalue_vehicle"/>
+	</field>
+	<field name="original_price" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="original_price"/>
+		<property name="com.jaspersoft.studio.field.label" value="original_price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_currvalue_vehicle"/>
+	</field>
+	<field name="current_price" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="current_price"/>
+		<property name="com.jaspersoft.studio.field.label" value="current_price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_currvalue_vehicle"/>
+	</field>
+	<field name="market_price" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="market_price"/>
+		<property name="com.jaspersoft.studio.field.label" value="market_price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_currvalue_vehicle"/>
+	</field>
+	<field name="estimate_repair" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="estimate_repair"/>
+		<property name="com.jaspersoft.studio.field.label" value="estimate_repair"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_currvalue_vehicle"/>
+	</field>
+	<field name="estimate_price" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="estimate_price"/>
+		<property name="com.jaspersoft.studio.field.label" value="estimate_price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_currvalue_vehicle"/>
+	</field>
+	<field name="metal_price" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="metal_price"/>
+		<property name="com.jaspersoft.studio.field.label" value="metal_price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_currvalue_vehicle"/>
+	</field>
+	<field name="metal_weight" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="metal_weight"/>
+		<property name="com.jaspersoft.studio.field.label" value="metal_weight"/>
+	</field>
+	<field name="odo_read" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="odo_read"/>
+		<property name="com.jaspersoft.studio.field.label" value="odo_read"/>
+	</field>
+	<field name="transmission" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="transmission"/>
+		<property name="com.jaspersoft.studio.field.label" value="transmission"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="fuel_desc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="fuel_desc"/>
+		<property name="com.jaspersoft.studio.field.label" value="fuel_desc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_engine_fuel_type"/>
+	</field>
+	<field name="wheel_type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="wheel_type"/>
+		<property name="com.jaspersoft.studio.field.label" value="wheel_type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="total_seat" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="total_seat"/>
+		<property name="com.jaspersoft.studio.field.label" value="total_seat"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="engine_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="engine_no"/>
+		<property name="com.jaspersoft.studio.field.label" value="engine_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_currvalue_vehicle"/>
+	</field>
+	<field name="chasis_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="chasis_no"/>
+		<property name="com.jaspersoft.studio.field.label" value="chasis_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_currvalue_vehicle"/>
+	</field>
+	<field name="category_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="category_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="category_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_category"/>
+	</field>
+	<field name="subcategory_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="subcategory_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="subcategory_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_sub_category"/>
+	</field>
+	<field name="subcategory_type_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="subcategory_type_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="subcategory_type_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_sub_category_type"/>
+	</field>
+	<field name="brand_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="brand_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="brand_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="brands"/>
+	</field>
+	<field name="model_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="model_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="model_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_currvalue_vehicle"/>
+	</field>
+	<field name="evaluation_type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="evaluation_type"/>
+		<property name="com.jaspersoft.studio.field.label" value="evaluation_type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="bottom_part_cond" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="bottom_part_cond"/>
+		<property name="com.jaspersoft.studio.field.label" value="bottom_part_cond"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="inner_part_cond" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="inner_part_cond"/>
+		<property name="com.jaspersoft.studio.field.label" value="inner_part_cond"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="outer_part_cond" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="outer_part_cond"/>
+		<property name="com.jaspersoft.studio.field.label" value="outer_part_cond"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="accessories_detail" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="accessories_detail"/>
+		<property name="com.jaspersoft.studio.field.label" value="accessories_detail"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="engine_system" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="engine_system"/>
+		<property name="com.jaspersoft.studio.field.label" value="engine_system"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="engine_system_check" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="engine_system_check"/>
+		<property name="com.jaspersoft.studio.field.label" value="engine_system_check"/>
+	</field>
+	<field name="trans_system" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="trans_system"/>
+		<property name="com.jaspersoft.studio.field.label" value="trans_system"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="trans_system_check" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="trans_system_check"/>
+		<property name="com.jaspersoft.studio.field.label" value="trans_system_check"/>
+	</field>
+	<field name="susp_system" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="susp_system"/>
+		<property name="com.jaspersoft.studio.field.label" value="susp_system"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="susp_system_check" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="susp_system_check"/>
+		<property name="com.jaspersoft.studio.field.label" value="susp_system_check"/>
+	</field>
+	<field name="brek_system" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="brek_system"/>
+		<property name="com.jaspersoft.studio.field.label" value="brek_system"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="brek_system_check" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="brek_system_check"/>
+		<property name="com.jaspersoft.studio.field.label" value="brek_system_check"/>
+	</field>
+	<field name="wiring_system" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="wiring_system"/>
+		<property name="com.jaspersoft.studio.field.label" value="wiring_system"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="wiring_system_check" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="wiring_system_check"/>
+		<property name="com.jaspersoft.studio.field.label" value="wiring_system_check"/>
+	</field>
+	<field name="aircond_system" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="aircond_system"/>
+		<property name="com.jaspersoft.studio.field.label" value="aircond_system"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="aircond_system_check" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="aircond_system_check"/>
+		<property name="com.jaspersoft.studio.field.label" value="aircond_system_check"/>
+	</field>
+	<field name="tyre_front_left_percentage" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="tyre_front_left_percentage"/>
+		<property name="com.jaspersoft.studio.field.label" value="tyre_front_left_percentage"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="tyre_year_fl" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tyre_year_fl"/>
+		<property name="com.jaspersoft.studio.field.label" value="tyre_year_fl"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="tyre_front_right_percentage" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="tyre_front_right_percentage"/>
+		<property name="com.jaspersoft.studio.field.label" value="tyre_front_right_percentage"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="tyre_year_fr" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tyre_year_fr"/>
+		<property name="com.jaspersoft.studio.field.label" value="tyre_year_fr"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="tyre_back_left_percentage" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="tyre_back_left_percentage"/>
+		<property name="com.jaspersoft.studio.field.label" value="tyre_back_left_percentage"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="tyre_year_rl" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tyre_year_rl"/>
+		<property name="com.jaspersoft.studio.field.label" value="tyre_year_rl"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="tyre_back_right_percentage" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="tyre_back_right_percentage"/>
+		<property name="com.jaspersoft.studio.field.label" value="tyre_back_right_percentage"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<field name="tyre_year_rr" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tyre_year_rr"/>
+		<property name="com.jaspersoft.studio.field.label" value="tyre_year_rr"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl1"/>
+	</field>
+	<title>
+		<band height="443">
+			<frame>
+				<reportElement positionType="Float" x="1" y="10" width="543" height="433" isRemoveLineWhenBlank="true" uuid="e24731b9-0b24-415f-84fd-404b11973ab7"/>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="40" uuid="6c3563bd-7a7d-407d-8c67-4a2498d5b1c0"/>
+					<box rightPadding="3"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[Tayar]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="100" y="0" width="10" height="40" uuid="d9c29e3d-3845-4ada-9366-ddc567da900c"/>
+					<textElement verticalAlignment="Top"/>
+					<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+				</textField>
+				<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+					<reportElement x="166" y="34" width="330" height="388" uuid="f820d2c7-5ccd-48b6-9c10-37d1526e6383"/>
+					<imageExpression><![CDATA[$P{asset_path}+"/img/chassis.svg"]]></imageExpression>
+				</image>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="136" y="59" width="102" height="21" isRemoveLineWhenBlank="true" uuid="fbdcd330-8db3-4e0b-a9f0-74ab359fff1a"/>
+					<box topPadding="1" leftPadding="0" rightPadding="5">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="3.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{tyre_front_left_percentage} != null ? $F{tyre_front_left_percentage}+"%" : "-"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="136" y="44" width="102" height="15" backcolor="#DBDBDB" uuid="af51b223-8375-437c-89b1-d5669448cc52">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="0" bottomPadding="1" rightPadding="5">
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="3.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Kiri]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="136" y="95" width="102" height="21" isRemoveLineWhenBlank="true" uuid="07ed11a1-5738-4e7b-9462-2ace617552a5"/>
+					<box topPadding="1" leftPadding="0" rightPadding="5">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="3.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{tyre_year_fl} != null ? $F{tyre_year_fl} : "-"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="136" y="80" width="102" height="15" backcolor="#DBDBDB" uuid="c6bcd6b1-3d9b-47d2-af88-07ada26d806b">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="0" bottomPadding="1" rightPadding="5">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="3.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Dibuat]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="424" y="95" width="102" height="21" isRemoveLineWhenBlank="true" uuid="d6208738-b20c-4be6-83eb-4e85216e823e"/>
+					<box topPadding="1" leftPadding="5" rightPadding="0">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="3.0"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{tyre_year_fr} != null ? $F{tyre_year_fr} : "-"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="424" y="80" width="102" height="15" backcolor="#DBDBDB" uuid="368c2642-457e-4aff-8c95-c46284afe6e7">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="5" bottomPadding="1" rightPadding="0">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="3.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Dibuat]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="424" y="44" width="102" height="15" backcolor="#DBDBDB" uuid="b94c8944-7390-4b9b-8beb-8f6dc2a66171">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="5" bottomPadding="1" rightPadding="0">
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="3.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Kanan]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="424" y="59" width="102" height="21" isRemoveLineWhenBlank="true" uuid="dc761bd0-f4cc-4e61-bb9a-63091cee8b76"/>
+					<box topPadding="1" leftPadding="5" rightPadding="0">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="3.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{tyre_front_right_percentage} != null ? $F{tyre_front_right_percentage}+"%" : "-"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="280" y="18" width="100" height="16" uuid="2b42ab56-99b7-4089-bed6-1ff2cd5ad4d8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[DEPAN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="280" y="406" width="100" height="16" uuid="7640616b-3e63-4495-b167-cc65bfc2fd9d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BELAKANG]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="135" y="392" width="102" height="21" isRemoveLineWhenBlank="true" uuid="3ddcd5e9-d06c-45f5-9c68-f5b2b7bbc0f3"/>
+					<box topPadding="1" leftPadding="0" rightPadding="5">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="3.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{tyre_year_rl} != null ? $F{tyre_year_rl} : "-"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="135" y="377" width="102" height="15" backcolor="#DBDBDB" uuid="a217718f-19e8-4a06-849a-b2c37be78760">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="0" bottomPadding="1" rightPadding="5">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="3.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Dibuat]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="135" y="356" width="102" height="21" isRemoveLineWhenBlank="true" uuid="236d166c-6ac2-4396-b9b6-a4046659293d"/>
+					<box topPadding="1" leftPadding="0" rightPadding="5">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="3.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{tyre_back_left_percentage} != null ? $F{tyre_back_left_percentage}+"%" : "-"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="135" y="341" width="102" height="15" backcolor="#DBDBDB" uuid="cd06e6f1-84da-45a5-bef2-95e3da8ffca5">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="0" bottomPadding="1" rightPadding="5">
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="3.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Kiri]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="424" y="392" width="102" height="21" isRemoveLineWhenBlank="true" uuid="116d902d-57b9-4eee-b906-ca859c57c1a5"/>
+					<box topPadding="1" leftPadding="5" rightPadding="0">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="3.0"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{tyre_year_rr} != null ? $F{tyre_year_rr} : "-"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="424" y="377" width="102" height="15" backcolor="#DBDBDB" uuid="0b1fd78a-af40-4f7a-9478-d1637b8ec5d9">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="5" bottomPadding="1" rightPadding="0">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="3.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Dibuat]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="424" y="356" width="102" height="21" isRemoveLineWhenBlank="true" uuid="8a52ea3d-3975-4acd-8129-631a643b74d0"/>
+					<box topPadding="1" leftPadding="5" rightPadding="0">
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="3.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{tyre_back_right_percentage} != null ? $F{tyre_back_right_percentage}+"%" : "-"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="424" y="341" width="102" height="15" backcolor="#DBDBDB" uuid="9dc300ce-5a64-4e25-b449-6d20bb8d1e79">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box leftPadding="5" bottomPadding="1" rightPadding="0">
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="3.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Kanan]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+</jasperReport>

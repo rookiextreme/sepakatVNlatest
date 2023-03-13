@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="assessment_certificate_safety" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="e2bd5278-d70b-41d9-bb12-8a2512faaf54">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="231"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="758"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PostgreSQL-Local"/>
+	<parameter name="asset_path" class="java.lang.String"/>
+	<parameter name="check_is_genuine_url" class="java.lang.String"/>
+	<parameter name="tarikh_periksa" class="java.lang.String"/>
+	<parameter name="state_of_woksyop" class="java.lang.String"/>
+	<parameter name="future_date" class="java.lang.String"/>
+	<parameter name="assessment_vehicle_safety_id" class="java.lang.String"/>
+	<parameter name="woksyop_state" class="java.lang.String"/>
+	<parameter name="branch_workshop_state" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT a.plate_no as plate_no, a.cert_hash_key as cert_key, a.cert_ref_number as ref_number, a.model_name as model_name, a.odometer as odometer, a.approval as kelulusan, a.approve_dt as approve_dt,
+b.department_name as dprt, c.desc as woksyop, d.desc as state_name, a.engine_no as enjin, a.chasis_no as casis, e.name as brand_name, f.name as jenis, g.desc as state_woksyop
+FROM assessment.assessment_safety_vehicle a
+JOIN assessment.assessment_safety b ON b.id = a.assessment_safety_id
+JOIN ref_workshop c ON b.workshop_id = c.id
+JOIN ref_state d ON c.state_id = d.id
+LEFT JOIN vehicles.brands e ON e.id = a.vehicle_brand_id
+LEFT JOIN ref_sub_category_type f ON f.id = a.sub_category_type_id
+JOIN ref_state g ON c.state_id = g.id
+WHERE a.id = $P!{assessment_vehicle_safety_id}]]>
+	</queryString>
+	<field name="plate_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="plate_no"/>
+		<property name="com.jaspersoft.studio.field.label" value="plate_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety_vehicle"/>
+	</field>
+	<field name="cert_key" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cert_key"/>
+		<property name="com.jaspersoft.studio.field.label" value="cert_key"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety_vehicle"/>
+	</field>
+	<field name="ref_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ref_number"/>
+		<property name="com.jaspersoft.studio.field.label" value="ref_number"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety_vehicle"/>
+	</field>
+	<field name="model_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="model_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="model_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety_vehicle"/>
+	</field>
+	<field name="odometer" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="odometer"/>
+		<property name="com.jaspersoft.studio.field.label" value="odometer"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety_vehicle"/>
+	</field>
+	<field name="kelulusan" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="kelulusan"/>
+		<property name="com.jaspersoft.studio.field.label" value="kelulusan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety_vehicle"/>
+	</field>
+	<field name="approve_dt" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="approve_dt"/>
+		<property name="com.jaspersoft.studio.field.label" value="approve_dt"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety_vehicle"/>
+	</field>
+	<field name="dprt" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dprt"/>
+		<property name="com.jaspersoft.studio.field.label" value="dprt"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="woksyop" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="woksyop"/>
+		<property name="com.jaspersoft.studio.field.label" value="woksyop"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_workshop"/>
+	</field>
+	<field name="state_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="state_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="state_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_state"/>
+	</field>
+	<field name="enjin" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="enjin"/>
+		<property name="com.jaspersoft.studio.field.label" value="enjin"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety_vehicle"/>
+	</field>
+	<field name="casis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="casis"/>
+		<property name="com.jaspersoft.studio.field.label" value="casis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety_vehicle"/>
+	</field>
+	<field name="brand_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="brand_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="brand_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="brands"/>
+	</field>
+	<field name="jenis" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="jenis"/>
+		<property name="com.jaspersoft.studio.field.label" value="jenis"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_sub_category_type"/>
+	</field>
+	<field name="state_woksyop" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="state_woksyop"/>
+		<property name="com.jaspersoft.studio.field.label" value="state_woksyop"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_state"/>
+	</field>
+	<detail>
+		<band height="802">
+			<componentElement>
+				<reportElement x="426" y="637" width="75" height="67" uuid="2d14cd03-c38d-471c-968e-be51ba40f771">
+					<property name="com.jaspersoft.studio.unit.margin" value="mm"/>
+				</reportElement>
+				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" margin="0" errorCorrectionLevel="M">
+					<jr:codeExpression><![CDATA[$P{check_is_genuine_url}+"?key="+$F{cert_key}]]></jr:codeExpression>
+				</jr:QRCode>
+			</componentElement>
+			<image scaleImage="RealSize">
+				<reportElement x="240" y="60" width="80" height="70" uuid="5a963d31-420d-4748-beb4-92736c2e279b"/>
+				<imageExpression><![CDATA[$P{asset_path}+"/img/logo_negara_small.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="4" y="7" width="1" height="793" uuid="657963c3-4e22-4421-83a7-10766fcb92ac"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="6" y="9" width="1" height="790" uuid="0fa5cf14-8e6e-4a63-9899-08489bd01bc9"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="4" y="7" width="546" height="1" uuid="cbb7df5c-39a8-4720-a9da-5360004472fb"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="6" y="9" width="542" height="1" uuid="8b101722-207b-44f8-8c15-40eae4adbe30"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="547" y="9" width="1" height="790" uuid="35b5516c-36c5-4bd9-bddd-6d04d98ca6a0"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="550" y="7" width="1" height="793" uuid="9101092f-22bd-4ea7-889c-6e6550267aff"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="7" y="798" width="541" height="1" uuid="075ab07d-5162-4d1e-9d35-02463349b745"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<image scaleImage="RealSize">
+				<reportElement mode="Opaque" x="80" y="250" width="400" height="195" uuid="d5c6ef6b-1f91-4007-9225-762f9af7aac2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{asset_path}+"/img/logo-jkr-min-blur-2.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="4" y="800" width="547" height="1" uuid="b1852ce1-5235-48af-8a85-22cbbccbdb74"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="100" y="271" width="370" height="20" uuid="9afa9401-4201-4e74-be2a-c6a9f663872d"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="html">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ADALAH DIPERAKUI BAHAWA KENDERAAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="120" y="363" width="129" height="15" uuid="4dd24190-d50c-430d-8520-d99927b424c1"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[JENIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="274" y="363" width="10" height="15" uuid="5b94f471-32ba-455b-b9c1-06ee27fd99fb"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="310" y="363" width="180" height="15" isRemoveLineWhenBlank="true" uuid="a8e7f063-bac6-408c-8c3a-8f31666f8e21"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jenis}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="120" y="303" width="129" height="15" uuid="ad639607-466e-43a2-91bc-08d8e3120887"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[NO. PENDAFTARAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="120" y="343" width="129" height="15" uuid="c23b9270-6032-498c-9cfa-c64f8486e359"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[NO. ENJIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="274" y="343" width="10" height="15" uuid="5f599f59-6664-4490-905b-5009fd1f753b"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="274" y="303" width="10" height="15" uuid="911724f2-b510-4cbc-9e49-8e5e734f7a35"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="310" y="303" width="180" height="15" isRemoveLineWhenBlank="true" uuid="10a3ef20-8278-4f95-8ab7-07a9231176de"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{plate_no}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="310" y="343" width="180" height="15" isRemoveLineWhenBlank="true" uuid="138a8c46-711c-4666-9e7d-c91d00348f18"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{enjin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="120" y="323" width="129" height="15" uuid="82b01702-0141-4183-a210-997f4eb3ba7d"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[NO. CASIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="274" y="323" width="10" height="15" uuid="f6095d58-945a-430d-9875-a1f0ecc9eb7c"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="310" y="323" width="180" height="15" isRemoveLineWhenBlank="true" uuid="06975c3b-846f-41f8-b3f1-3cac53f35c93"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{casis}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="350" y="20" width="150" height="21" isRemoveLineWhenBlank="true" uuid="d3f0d201-bedd-46eb-a276-f0949b85efa2"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>NO. SIRI : </b>"+$F{ref_number}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Right">
+				<reportElement x="411" y="706" width="89" height="19" uuid="c35292ef-0367-4994-9792-638a79ca28a8"/>
+				<imageExpression><![CDATA[$P{asset_path}+"/img/spakat-small-min.png"]]></imageExpression>
+			</image>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="120" y="140" width="320" height="50" isRemoveLineWhenBlank="true" uuid="f5687750-9026-45d0-959b-b6d218e92dc2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["JABATAN KERJA RAYA \n"+$P{woksyop_state}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="50" y="211" width="470" height="49" isRemoveLineWhenBlank="true" uuid="0936ef4c-f8c5-4bed-ba62-0a7faaadb5df"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SIJIL PEMERIKSAAN KESELAMATAN DAN PRESTASI KENDERAAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="120" y="383" width="129" height="15" uuid="05e5880b-26ce-40bc-8561-6eccdb3d9a5e"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[PEMBUAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="274" y="383" width="10" height="15" uuid="9b4399fd-4690-494d-bee3-67165c5aa170"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="310" y="383" width="180" height="15" isRemoveLineWhenBlank="true" uuid="ace52da7-366a-4cb7-a982-44c355ba2f98"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brand_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="120" y="403" width="129" height="15" uuid="f422770d-5004-4c6c-98bd-1ac96d646f3c"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[MODEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="120" y="423" width="129" height="15" uuid="c464e515-dba9-4bfe-9251-ed3a4fd940d4"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[ODOMETER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="274" y="403" width="10" height="15" uuid="3918243d-bb54-4be7-acad-afd56964810e"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="274" y="423" width="10" height="15" uuid="8c3cf175-b0f4-4e22-9290-ef2929684a4c"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="310" y="403" width="180" height="15" isRemoveLineWhenBlank="true" uuid="fe816f33-ed21-401c-87cd-51a82551cabf"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{model_name}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="310" y="423" width="180" height="15" isRemoveLineWhenBlank="true" uuid="c7fdc474-a02b-4e1c-a3e8-dd82eff8304c"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{odometer}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="310" y="443" width="180" height="15" isRemoveLineWhenBlank="true" uuid="f46ba24d-0bb8-48c9-aa2c-db8c673d2002"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dprt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="120" y="443" width="129" height="15" uuid="14f55a37-2374-4e10-90ae-edb74dd6eb2f"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[AGENSI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="274" y="443" width="10" height="15" uuid="e46c127f-37d8-4e4c-857a-05c50eadddf2"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="50" y="458" width="460" height="30" isRemoveLineWhenBlank="true" uuid="43cf324e-0688-42c4-b7b7-bdeb6018e8bf"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Arial" size="12"/>
+					<paragraph lineSpacingSize="1.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["telah diperiksa serta diuji di <b>"+$P{branch_workshop_state}+"</b> dan tarikh pemeriksaan seterusnya adalah pada atau sebelum <b>" +$P{future_date} + "</b>."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="120" y="318" width="370" height="4" uuid="0df505ad-cf67-4b83-a0cb-abebbe1d6b74"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="120" y="338" width="370" height="4" uuid="2c44889b-1a6e-4841-9e12-81dbea80e418"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="120" y="358" width="370" height="4" uuid="c0571af9-faba-4867-b75b-2a18093e35a7"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="120" y="378" width="370" height="4" uuid="8d4a7ae5-6d09-412d-b597-cc6c9731e07c"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="120" y="398" width="370" height="4" uuid="8dd972d2-a66e-4571-b54b-968254dd973c"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="120" y="418" width="370" height="4" uuid="15c0a1b5-ba7c-4d86-8ff2-53418b4ec06e"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="120" y="438" width="370" height="4" uuid="85c66d50-ce63-46c1-8f7c-82d6585cb540"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="190" y="501" width="179" height="79" isRemoveLineWhenBlank="true" uuid="16b3b386-a8a4-4a34-b883-e74aea8683fb">
+					<printWhenExpression><![CDATA[$F{kelulusan} != null]]></printWhenExpression>
+				</reportElement>
+				<staticText>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="39" y="0" width="100" height="15" isRemoveLineWhenBlank="true" uuid="3451ad8d-7da4-4e40-8317-7ca7672aec8a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="11"/>
+					</textElement>
+					<text><![CDATA[Hasil Pemeriksaan :]]></text>
+				</staticText>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="29" y="15" width="120" height="19" isRemoveLineWhenBlank="true" uuid="98885d92-712c-481a-8eb2-a6acbd0d1d4f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="16"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{kelulusan}.equals(true) ? "LULUS" : "GAGAL"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="49" width="179" height="30" uuid="f8102a42-3e34-40f0-9e73-970b073d9ca3"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA["* Sila semak di dalam sistem untuk butiran yang lebih lanjut."]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="320" y="737" width="179" height="15" isRemoveLineWhenBlank="true" uuid="f8dc5484-6810-4742-89c2-a1edd1d3b3cb"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tarikh : " + new SimpleDateFormat("dd/MM/yyyy").format($F{approve_dt})]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="41" y="718" width="209" height="19" isRemoveLineWhenBlank="true" uuid="77ceaed9-fc48-48ec-b160-8f8f6c7fdc9f"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["KETUA JURUTERA MEKANIKAL"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="41" y="737" width="259" height="19" isRemoveLineWhenBlank="true" uuid="28bd11be-8905-4fe3-aa05-3f47f5622e17"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{state_of_woksyop}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="768" width="543" height="30" uuid="4ed318f5-73ba-4d7b-89c7-ba2dbcecdfe1"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(Sijil ini adalah cetakan komputer dan tidak memerlukan tandatangan) ]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

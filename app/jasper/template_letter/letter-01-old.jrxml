@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="letter-01" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9f309975-d918-40d5-bc5d-a013734b243a">
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#BFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_CH" mode="Opaque" backcolor="#B5B5B5">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="b6f1186a-231b-401c-b571-fc320329651f">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="Dataset2" uuid="373cd684-4f02-4107-a7a3-ad96e6341b00">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<detail>
+		<band height="802">
+			<staticText>
+				<reportElement x="95" y="28" width="300" height="50" uuid="a22fb80b-344c-4d9b-bc93-bb6f9b83d5eb"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[JKR Woksyop Persekutuan
+(JKR Cawangan Kejuruteraan Mekanikal, Bahagian Perkhidmatan Harta)
+No. 2, Jalan Arowana, Cheras
+55300 KUALA LUMPUR
+]]></text>
+			</staticText>
+			<line>
+				<reportElement x="5" y="85" width="560" height="1" uuid="caccb2f8-b54a-4a86-a5ce-4a3de968a038"/>
+			</line>
+			<staticText>
+				<reportElement x="435" y="48" width="45" height="16" uuid="8789b2c7-8213-4507-a997-582e0f1e64d5"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Telefon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="58" width="32" height="20" uuid="1b0f0550-4ff2-4762-88dc-2da9a37e3064"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Faks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="48" width="10" height="30" uuid="d057a0be-106a-47ea-b65b-7429a9e0f4ce"/>
+				<text><![CDATA[:
+:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="485" y="48" width="80" height="16" uuid="43c3f6a9-e1e8-411b-bcc0-f5b03d5ed376"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[03-9206 4000
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="105" width="90" height="20" uuid="0e3fc94a-367b-493e-b09b-8908c232a3da"/>
+				<text><![CDATA[Ruj. Kami	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="125" width="90" height="20" uuid="206c1e41-fd41-43a0-8a78-61241cf73e08"/>
+				<text><![CDATA[Tarikh		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="385" y="105" width="140" height="20" uuid="30905864-e850-40e7-b64b-afcf9a698228"/>
+			</textField>
+			<textField>
+				<reportElement x="385" y="125" width="140" height="20" uuid="79586be7-7121-4918-bbb3-2d5a7097f537"/>
+			</textField>
+			<staticText>
+				<reportElement x="45" y="175" width="260" height="50" uuid="f7b28965-c46c-4e2a-8920-201f17b00ecd"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Jabatan Peguam Negara 
+Wilayah Persekutuan Kuala Lumpur
+Tingkat 5 & 7, Wisma Chase Perdana
+Off Jalan Semantan, Damansara Heights
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="155" width="260" height="20" uuid="3ab375ba-7bca-4a64-9609-e502158b2dee"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Pegawai Cawangan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="218" width="260" height="20" uuid="3023ecbb-4986-47df-8a3e-ca93dcf92fb6"/>
+				<textElement>
+					<font fontName="arial&#xA;" size="12" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[50512, KUALA LUMPUR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="255" width="80" height="20" uuid="a36f725f-d027-4c8d-a912-e104cd93c09d"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Tuan/Puan,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="285" width="490" height="30" uuid="69d6ad60-4d55-4b28-ac13-1635f0aed3d9"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PEMERIKSAAN DAN PENILAIAN KEROSAKAN KENDERAAN JABATAN JENIS PROTON EXORA NO. PENDAFTARAN : WYH 9094]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="485" y="58" width="80" height="20" uuid="6570f907-40e7-4022-9308-bffa3382d504"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[03-9283 1285]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="5" width="300" height="30" uuid="fbe0e9cd-0856-4d8c-aec7-8985caf5f8b9"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JABATAN KERJA RAYA MALAYSIA
+Ketua Jurutera Mekanikal
+]]></text>
+			</staticText>
+			<line>
+				<reportElement x="40" y="315" width="450" height="1" uuid="82373988-6f9a-4512-9fc1-5cdcefd3f086">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="40" y="325" width="311" height="18" uuid="1fdef1da-b555-447d-ba03-a156464bf487">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Dengan segala hormatnya, kami merujuk perkara di atas.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="343" width="451" height="50" uuid="28f2252c-27db-49ca-ace3-a7320390be89">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="arial" size="12"/>
+				</textElement>
+				<text><![CDATA[2.	Untuk makluman pihak tuan, pihak kami telah melaksanakan pemeriksaan ke atas kenderaan berkenaan di JKR Woksyop Persekutuan, Kuala Lumpur pada 27 April 2021 dan mencadangkan kerja-kerja pembaikan berikut:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="460" width="449" height="39" uuid="1cdd9654-deb7-49b2-a10c-2c6eb34a6619"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[3.	Pihak kami telah menganggarkan kos pembaikan melibatkan alat ganti tulen dan upah pemasangan adalah lebih kurang ]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="40" y="393" width="459" height="66" uuid="19348039-c497-4641-8cc2-fab76ed117dc">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 2_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 2_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 2_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="a3e4d5b1-1c11-4863-ae2c-5662a5bc3a75">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="20" uuid="f8fb93e1-d081-429f-83d2-2699cfce699b">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="20" height="30" uuid="c58d5bd3-5720-405e-86ba-6b64b104f2c5"/>
+								<textElement>
+									<font fontName="Arial" size="12"/>
+								</textElement>
+								<text><![CDATA[Bil]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 2_TD" height="30"/>
+					</jr:column>
+					<jr:column width="170" uuid="8767f133-803f-464d-bc89-1a548c344e59">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="170" height="30" uuid="401b1925-f77c-4edf-a966-e700c4353432"/>
+								<textElement>
+									<font fontName="Arial" size="12"/>
+								</textElement>
+								<text><![CDATA[Perincian Kerja]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 2_TD" height="30"/>
+					</jr:column>
+					<jr:column width="80" uuid="8ca8f1c6-2e7b-4656-b3f3-c25b8818487e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="e25604e9-2220-49a7-ac49-1924f31024ad"/>
+								<textElement textAlignment="Left">
+									<font fontName="Arial" size="12"/>
+								</textElement>
+								<text><![CDATA[Simptom/
+Kerosakan]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 2_TD" height="30"/>
+					</jr:column>
+					<jr:column width="120" uuid="a0e1b5e7-4cd6-40a3-a305-6bf15418a4fd">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="120" height="30" uuid="128dee00-68aa-4bc8-9f19-97ca5f05f8f7"/>
+								<textElement textAlignment="Left">
+									<font fontName="Arial" size="12"/>
+								</textElement>
+								<text><![CDATA[Keperluan Penukaran
+Alat Ganti
+
+]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 2_TD" height="30"/>
+					</jr:column>
+					<jr:column width="59" uuid="86767290-d2b3-46dc-a9fd-2b3ce26f190f">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader style="Table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="59" height="30" uuid="57762a1f-694f-43e2-8708-e78172b00ca9"/>
+								<textElement>
+									<font fontName="Arial" size="12"/>
+								</textElement>
+								<text><![CDATA[Anggaran]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 2_TD" height="30"/>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement x="40" y="497" width="448" height="50" uuid="a44341e6-fb3c-4009-a414-ebbea18b73d8"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[4.	Anggaran ini adalah berdasarkan pemeriksaan fizikal sahaja. Sekiranya terdapat pertambahan kerja-kerja pembaikan, pihak tuan boleh merujuk semula kepada pihak kami untuk tujuan pengesahan semula.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="547" width="447" height="30" uuid="9403aecd-349b-411f-ac86-0ac406600ee9"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[5.	Sekiranya ingin penjelasan lanjut mengenai perkara ini, pihak tuan boleh menghubungi pegawai kami En. Asmawe bin Abd Wahab ditalian 03-9206 4000. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="580" width="211" height="19" uuid="12b2ea23-8036-4f71-8f27-df59bdcd333f"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Sekian, terima kasih.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="599" width="331" height="47" uuid="e7eee112-fb98-4971-9034-13960263e1a3"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[“PRIHATIN RAKYAT: DARURAT MEMERANGI COVID-19”
+
+“BERKHIDMAT UNTUK NEGARA”
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="656" width="242" height="22" uuid="06decb84-5cfa-402d-80b6-b9e59f557b54"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Saya yang menjalankan amanah,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="750" width="168" height="14" uuid="16d9d51c-6c7f-4760-8c63-6667876499ae"/>
+				<textElement>
+					<font fontName="arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(MOHD AZLAN BIN UMAR)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="764" width="180" height="15" uuid="bb253e8e-f37e-4397-865a-d9ecfe9d1abc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="arial&#xA;" size="12"/>
+				</textElement>
+				<text><![CDATA[Ketua Jurutera Mekanikal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="58" y="780" width="194" height="20" uuid="4736e246-ab3c-45b2-a919-3040472f36de"/>
+				<textElement>
+					<font fontName="arial" size="12"/>
+				</textElement>
+				<text><![CDATA[JKR Woksyop Persekutuan
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="764" width="20" height="20" uuid="dc15c7c2-493b-4d35-aeb2-170544bcf6b6"/>
+				<textElement>
+					<font fontName="arial" size="12"/>
+				</textElement>
+				<text><![CDATA[b.p]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="475" width="230" height="20" uuid="ef0658e4-80b2-4868-a1d6-0abb2446a350"/>
+				<textElement>
+					<font fontName="arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RM     (Ringgit Malaysia:  )]]></text>
+			</staticText>
+		</band>
+		<band height="758"/>
+	</detail>
+</jasperReport>

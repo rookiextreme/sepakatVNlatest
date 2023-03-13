@@ -1,0 +1,19 @@
+
+@media only screen and (max-width: 576px) and (orientation: portrait) {
+	.burger-box {
+		display: block;
+		position: fixed;
+		top:0px;
+		width:50px;
+		right:10px;
+		height:50px;
+		z-index:1230;
+		text-align: center;
+	}
+	.front-iconic {
+		display:block;
+		width:70px;
+		height:auto;
+		margin-bottom:10px;
+	}
+}

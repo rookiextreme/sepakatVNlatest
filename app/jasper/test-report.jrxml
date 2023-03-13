@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test-report" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8e82c66a-cf39-4276-9f2c-06430af63007">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="senarai_penilaian" uuid="825028ed-2f78-421c-9dc4-1fea1d033879">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT worksyop.desc as desc, 
+(SELECT COUNT(new.id) as new
+FROM ref_workshop worksyop
+JOIN assessment.assessment_new new ON new.workshop_id = worksyop.id
+),
+(
+	SELECT  COUNT(gov_loan.id) as govloan
+FROM ref_workshop worksyop
+	JOIN assessment.assessment_gov_loan gov_loan ON gov_loan.workshop_id = worksyop.id
+),
+(
+	SELECT COUNT(accident.id) as accident
+FROM ref_workshop worksyop
+	JOIN assessment.assessment_accident accident ON accident.workshop_id = worksyop.id
+),
+(
+	SELECT COUNT(disposal.id) as disposal
+FROM ref_workshop worksyop
+	JOIN assessment.assessment_disposal disposal ON disposal.workshop_id = worksyop.id
+),
+(
+	SELECT COUNT(currvalue.id) as currvalue
+FROM ref_workshop worksyop
+	JOIN assessment.assessment_currvalue currvalue ON currvalue.workshop_id = worksyop.id
+),
+(
+	SELECT COUNT(safety.id) as safety
+FROM ref_workshop worksyop
+	JOIN assessment.assessment_safety safety ON safety.workshop_id = worksyop.id
+)
+FROM ref_workshop worksyop
+]]>
+		</queryString>
+		<field name="desc" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="desc"/>
+			<property name="com.jaspersoft.studio.field.label" value="desc"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="ref_workshop"/>
+		</field>
+		<field name="new" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="new"/>
+			<property name="com.jaspersoft.studio.field.label" value="new"/>
+		</field>
+		<field name="govloan" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="govloan"/>
+			<property name="com.jaspersoft.studio.field.label" value="govloan"/>
+		</field>
+		<field name="accident" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="accident"/>
+			<property name="com.jaspersoft.studio.field.label" value="accident"/>
+		</field>
+		<field name="disposal" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="disposal"/>
+			<property name="com.jaspersoft.studio.field.label" value="disposal"/>
+		</field>
+		<field name="currvalue" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="currvalue"/>
+			<property name="com.jaspersoft.studio.field.label" value="currvalue"/>
+		</field>
+		<field name="safety" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="safety"/>
+			<property name="com.jaspersoft.studio.field.label" value="safety"/>
+		</field>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM ref_workshop LIMIT 1]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_workshop"/>
+	</field>
+	<field name="code" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="code"/>
+		<property name="com.jaspersoft.studio.field.label" value="code"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_workshop"/>
+	</field>
+	<field name="desc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="desc"/>
+		<property name="com.jaspersoft.studio.field.label" value="desc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_workshop"/>
+	</field>
+	<field name="code_warrant_ofs" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="code_warrant_ofs"/>
+		<property name="com.jaspersoft.studio.field.label" value="code_warrant_ofs"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_workshop"/>
+	</field>
+	<field name="status" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="status"/>
+		<property name="com.jaspersoft.studio.field.label" value="status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_workshop"/>
+	</field>
+	<field name="created_by" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="created_by"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_by"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_workshop"/>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_workshop"/>
+	</field>
+	<field name="updated_at" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_workshop"/>
+	</field>
+	<detail>
+		<band height="621" splitType="Stretch">
+			<componentElement>
+				<reportElement x="20" y="100" width="501" height="171" uuid="fbdd60eb-e461-4274-8a1f-3dc2b0243d19">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="senarai_penilaian" uuid="746968a7-5956-4f80-a892-5f22979f337d">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="100" uuid="bda9e3fc-ec4a-403b-9fe3-1ca0933ced93">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="9aaf4446-b4bf-4e63-8e2d-91da328acf57"/>
+								<textFieldExpression><![CDATA[$F{desc}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="4a383f30-6101-45b6-9f69-11643a46e4eb">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="2307aa1a-74e8-4dea-b606-c3860a9103ea"/>
+								<text><![CDATA[Kenderaan Baharu]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="2c59ec7d-7cc6-435b-9a68-67433d84af04"/>
+								<textFieldExpression><![CDATA[$F{new}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="81aa91d1-4b4a-49e3-a50f-7278eda7e250">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="992c254c-9b9a-4e07-8a14-9cd71e8a6d3d"/>
+								<text><![CDATA[Pinjaman Kerajaan]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="d2f4bfbf-cd3b-4830-bb18-7969454a2a62"/>
+								<textFieldExpression><![CDATA[$F{govloan}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="d23fbc5b-4d7f-49fe-9b92-4241da522364">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="b704a2e3-a902-4a4e-abc4-d16775da107f"/>
+								<text><![CDATA[Harga Semasa]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="30" uuid="2f617fc9-671c-4f11-825c-78f1ed1e4dcd"/>
+								<textFieldExpression><![CDATA[$F{currvalue}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="8fbfb4f4-ff98-4906-8dfe-9dbb89f5f3ab">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="812f91af-9160-446c-880f-df94646b85b3"/>
+								<text><![CDATA[Pelupusan]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="30" uuid="290574db-5e4f-474d-88f8-c7ca9799eba8"/>
+								<textFieldExpression><![CDATA[$F{disposal}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="e4c32779-7794-4f6c-bd2a-ed727478ecee">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="19aaa737-616c-4e55-9880-834ff9fe9b8a"/>
+								<text><![CDATA[Kemalangan]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="30" uuid="0ebf1142-70b2-482c-b861-0229f5e6da6e"/>
+								<textFieldExpression><![CDATA[$F{accident}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="807f0fe8-8ee3-492e-940a-58c8868fd02f">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="3993bd73-2f89-4363-b4fa-2ef74207c096"/>
+								<text><![CDATA[Keselamatan & Prestasi]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="30" uuid="99755f5b-1ae6-466b-81a8-558ad5ef99ba"/>
+								<textFieldExpression><![CDATA[$F{safety}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

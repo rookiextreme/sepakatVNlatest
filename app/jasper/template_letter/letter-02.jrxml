@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="letter-02" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="20" bottomMargin="20" isSummaryNewPage="true" isSummaryWithPageHeaderAndFooter="true" isFloatColumnFooter="true" uuid="299a4ad2-09e3-4e5d-af22-6ee61a757650">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SpakatLocal"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="appointment_dt" class="java.lang.String"/>
+	<parameter name="asset_path" class="java.lang.String"/>
+	<parameter name="vehicle_id" class="java.lang.String"/>
+	<parameter name="table_name" class="java.lang.String"/>
+	<parameter name="vehicle_brand" class="java.lang.String"/>
+	<parameter name="vehicle_model" class="java.lang.String"/>
+	<parameter name="ref_number" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="plate_no" class="java.lang.String"/>
+	<parameter name="officername" class="java.lang.String"/>
+	<parameter name="officerdesignation" class="java.lang.String"/>
+	<parameter name="officerphone" class="java.lang.String"/>
+	<parameter name="signature_quote" class="java.lang.String"/>
+	<parameter name="placement_name" class="java.lang.String"/>
+	<parameter name="address_to" class="java.lang.String"/>
+	<parameter name="template_letter_id" class="java.lang.String"/>
+	<parameter name="body_detail" class="java.lang.String"/>
+	<parameter name="vip_address" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="746">
+			<staticText>
+				<reportElement x="270" y="140" width="90" height="20" uuid="0c97d8c3-3cea-41fd-bbbc-d6cd854e30cb"/>
+				<text><![CDATA[Ruj. Kami	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="160" width="90" height="20" uuid="bbd11ac4-2870-472b-a31a-ab6b4074dfa9"/>
+				<text><![CDATA[Tarikh		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="360" y="140" width="134" height="20" uuid="fb55b67d-e770-4ca7-a8a5-3379bec916c9"/>
+				<textFieldExpression><![CDATA[$P{ref_number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="160" width="134" height="20" uuid="e5e49eb9-58af-487b-afb7-f394603eb8c0"/>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="2" y="328" width="492" height="1" uuid="10c8d0ad-8fb7-45a5-a73c-5cb1f327b0a1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="2" y="338" width="314" height="18" uuid="7bba6a54-675a-426d-9489-ea1c2b979853">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Dengan segala hormatnya, kami merujuk perkara di atas.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="423" width="492" height="39" uuid="f9c7e51b-6811-40c2-b574-82d9df5710e8"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[3.	Sekiranya ada penambahan kerja penyenggaraan, perlu merujuk kepada pihak kami terlebih dahulu bagi tujuan pengesahan kerosakan.  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="463" width="492" height="50" uuid="8ebe96c7-4c90-452a-aedb-c9bcc44fc5bc"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[4.	Anggaran ini adalah berdasarkan pemeriksaan fizikal sahaja. Sekiranya terdapat pertambahan kerja-kerja pembaikan, pihak tuan boleh merujuk semula kepada pihak kami untuk tujuan pengesahan semula.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="549" width="214" height="19" uuid="e8d8eebe-7c34-48f0-b8fa-7d9b4f168d67"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Sekian, terima kasih.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="655" width="244" height="22" uuid="1bb5990d-7da6-4936-8706-52ec91145713"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Saya yang menjalankan amanah,]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="2" y="279" width="492" height="46" uuid="9409aa24-deac-4ef7-82e7-18fbeabeb0ef"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PEMERIKSAAN DAN PENILAIAN KEROSAKAN KENDERAAN "+$P{vip_address}+" JENIS "+$P{vehicle_brand} +" "+$P{vehicle_model} + " NO. PENDAFTARAN : "+$P{plate_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="363" width="492" height="60" uuid="691b8d9d-88bc-4789-a9f5-49493b255849"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["2.	Untuk makluman pihak tuan, pihak kami telah melaksanakan pemeriksaan ke atas kenderaan berkenaan di "+$P{placement_name}+" pada "+$P{appointment_dt}+" dan mengesahkan kerja-kerja yang dicadang oleh pihak "+$P{body_detail}+"."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="513" width="492" height="30" uuid="c569b83d-d2b6-4d86-b718-cc23f27b1645"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5.	Sekiranya ingin penjelasan lanjut mengenai perkara ini, pihak tuan boleh menghubungi pegawai kami "+$P{officername}+" di talian "+$P{officerphone}+"."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="569" width="334" height="70" uuid="64985028-c86b-4d86-b6d9-fcd0a9bfd24c"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[UPPER("\""+$P{signature_quote}+"\"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="689" width="194" height="36" uuid="1a6002ee-9f32-4cec-973f-372dcec8684a"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{officerdesignation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="0" width="493" height="120" uuid="7bbcdbe1-ae4d-4cd0-9e51-0d0baf486d4f"/>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="-1" y="180" width="191" height="72" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="31b8aeee-5508-4beb-a46e-1572d25b440d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box leftPadding="0"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{address_to} != null ? $P{address_to} : ""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="-1" y="252" width="494" height="20" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="27bde72a-20e7-4aa4-b288-937bfef63f6c">
+					<printWhenExpression><![CDATA[$V{PAGE_NUMBER} == 1]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Tuan,]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="50">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="1" y="0" width="492" height="50" uuid="efc5f7d6-de1f-4031-87bc-d571208ae17f">
+					<printWhenExpression><![CDATA[$V{PAGE_NUMBER} == -1]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{asset_path} != null ? $P{asset_path}+"/img/template_letter/img/footer_001.png": "http://spakat.test/my-assets/img/template_letter/img/footer_001.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

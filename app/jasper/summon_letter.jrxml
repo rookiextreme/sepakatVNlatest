@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="surat_saman" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" uuid="2dfd884c-68c1-4864-a035-e6283ad0ecab">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SpakatLocal"/>
+	<parameter name="address_to" class="java.lang.String"/>
+	<parameter name="summon_id" class="java.lang.String"/>
+	<parameter name="quote" class="java.lang.String"/>
+	<parameter name="signature" class="java.lang.String"/>
+	<parameter name="ref_number" class="java.lang.String"/>
+	<parameter name="ref_date" class="java.lang.String"/>
+	<parameter name="copy_to" class="java.lang.String"/>
+	<parameter name="asset_path" class="java.lang.String"/>
+	<parameter name="branch_name" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select c.no_pendaftaran AS plate_no, d.desc AS summon_agency, a.summon_notice_no, a.mistake_date, a.mistake_time, e.name AS model_name, f.desc AS placement_name, g.name AS branch_name,
+(
+	select bb.contractor_name from fleet.fleet_public aa 
+	join fleet.fleet_project bb on bb.id = aa.project_id
+	where aa.id = c.id
+)
+from saman.maklumat_saman a 
+join saman.maklumat_kenderaan_saman b on b.id = a.maklumat_kenderaan_saman_id
+join fleet.fleet_lookup_vehicle_view c on c.id = b.pendaftaran_id
+join ref_summon_agency d on d.id= a.summon_agency_id
+left join vehicles.vehicle_models e on e.id = c.model_id
+left join fleet.fleet_placement f on f.id = c.placement_id
+left join ref_owner g on g.id = c.cawangan_id
+where a.id = $P!{summon_id}]]>
+	</queryString>
+	<field name="plate_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="plate_no"/>
+		<property name="com.jaspersoft.studio.field.label" value="plate_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_lookup_vehicle_view"/>
+	</field>
+	<field name="summon_agency" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="summon_agency"/>
+		<property name="com.jaspersoft.studio.field.label" value="summon_agency"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_summon_agency"/>
+	</field>
+	<field name="summon_notice_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="summon_notice_no"/>
+		<property name="com.jaspersoft.studio.field.label" value="summon_notice_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="maklumat_saman"/>
+	</field>
+	<field name="mistake_date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="mistake_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="mistake_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="maklumat_saman"/>
+	</field>
+	<field name="mistake_time" class="java.sql.Time">
+		<property name="com.jaspersoft.studio.field.name" value="mistake_time"/>
+		<property name="com.jaspersoft.studio.field.label" value="mistake_time"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="maklumat_saman"/>
+	</field>
+	<field name="model_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="model_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="model_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="vehicle_models"/>
+	</field>
+	<field name="placement_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="placement_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="placement_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fleet_placement"/>
+	</field>
+	<field name="branch_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="branch_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="branch_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_owner"/>
+	</field>
+	<field name="contractor_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="contractor_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="contractor_name"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="520" splitType="Stretch">
+			<textField>
+				<reportElement x="340" y="96" width="60" height="14" uuid="f0707c87-f52b-4c1b-8283-03853f468d2e"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ruj. Kami"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="96" width="10" height="14" uuid="15aa1b81-8d41-404d-90b8-cd9a00d89ab0"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="111" width="60" height="14" uuid="33c54156-2636-4174-8741-96b2aca3cf1b"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tarikh"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="10" y="140" width="250" height="20" isRemoveLineWhenBlank="true" uuid="49fc4570-f175-4949-b802-0ef8bc8a0ce8"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$P{address_to}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="111" width="10" height="14" uuid="c0a7cd84-4046-456b-8d99-3ed977a3cd9c"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="10" y="170" width="46" height="20" uuid="be9428eb-08af-4f73-ad24-bb37b7161dec"/>
+				<textFieldExpression><![CDATA["Tuan,"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="10" y="201" width="534" height="20" uuid="7011001b-13c6-49d9-95bf-4a2209d181c3"/>
+				<textField>
+					<reportElement positionType="Float" x="0" y="0" width="534" height="20" uuid="7e74fd1a-cb3a-4fda-b7b4-a6d58eae359e"/>
+					<textElement>
+						<font isBold="true" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["NOTIS PEMBERITAHUAN KESALAHAN LALULINTAS"]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="0" y="12" width="534" height="1" uuid="a3c32ab5-13af-4847-b817-f8c87945a893"/>
+				</line>
+			</frame>
+			<textField>
+				<reportElement positionType="Float" x="10" y="223" width="534" height="20" uuid="dc2c9c6d-2b46-4d30-8aff-19ca8c496c3d"/>
+				<textElement>
+					<font isBold="false" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dengan segala hormatnya saya merujuk kepada perkara tersebut di atas."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="10" y="250" width="534" height="30" uuid="f37834dd-502a-4703-a29c-d07699d5c434"/>
+				<textElement textAlignment="Justified">
+					<font isBold="false" isUnderline="false"/>
+					<paragraph lineSpacingSize="1.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["2. Untuk makluman, JKR Woksyop Persekutuan telah menerima notis saman dan semakan lanjut mendapati kenderaan tersebut adalah milik cawangan tuan. Ringkasan notis saman adalah seperti berikut:"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="Float" x="40" y="290" width="490" height="120" uuid="f6c09d2f-5813-4011-aa5b-3d69d3b968f1"/>
+				<textField>
+					<reportElement positionType="Float" x="0" y="0" width="130" height="20" uuid="53044685-7d8c-47e9-9d9a-8c1314b47581"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["No. Pendaftaran"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="0" y="20" width="130" height="20" uuid="d0b6199a-4653-496a-82cd-1c9425fd4757"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Pengeluar Saman"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="0" y="40" width="130" height="20" uuid="0bf1522b-f0d4-47ad-bf68-ec839654f6e9"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["No. Notis"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="0" y="60" width="130" height="20" uuid="6f11113e-8fbc-4834-aa69-8b406f844e9c"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Tarikh / Masa Kesalahan"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="0" y="80" width="130" height="20" uuid="daa9bbed-ab2e-4995-b856-fab59fa910eb"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Model"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="0" y="100" width="130" height="20" uuid="52d82d25-66da-48c0-afc8-67483930d25c"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Lokasi Penempatan"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="240" y="0" width="10" height="20" uuid="7dc93fb0-f7fa-43d7-95cf-f5f3b5f97f9e"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="240" y="20" width="10" height="20" uuid="9fc303b2-666c-4de2-94ec-94792ed5a52d"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="240" y="40" width="10" height="20" uuid="44abbf64-0229-4eaa-a32d-f4c1982186c2"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="240" y="60" width="10" height="20" uuid="7204d180-f437-4885-a6cb-dedf9fae3aa8"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="240" y="80" width="10" height="20" uuid="0bdd9a5b-f22c-4327-b823-40cdf18ea91b"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="240" y="100" width="10" height="20" uuid="36034d45-0504-4b3d-ab22-4b6536b49a3e"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="250" y="0" width="130" height="20" uuid="9949460a-6e86-4aa7-854b-f2ea34fcad02"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{plate_no}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="250" y="20" width="130" height="20" uuid="bd7d5f75-47a6-486a-8ed6-ad8c7e572517"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{summon_agency}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="250" y="40" width="130" height="20" uuid="8d35319d-1f61-485d-a8b2-84c112386e1f"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{summon_notice_no}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="250" y="60" width="230" height="20" uuid="aed30ec2-523c-4935-87b8-93a658ff2be9"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[DATEFORMAT($F{mistake_date},"d/M/Y")+" Jam "+DATEFORMAT($F{mistake_time},"hh:mm aa")]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="250" y="80" width="130" height="20" uuid="0d21a37a-5b49-497e-bc3f-17aa671481fe"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{model_name}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="250" y="100" width="130" height="20" uuid="7ae5edd3-68b3-4c57-8058-a09bceed8109"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{placement_name}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement positionType="Float" x="10" y="420" width="534" height="40" uuid="fc8a3035-06f1-4855-98d1-fceb971cb88d"/>
+				<textElement textAlignment="Justified">
+					<font isBold="false" isUnderline="false"/>
+					<paragraph lineSpacingSize="1.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["3. Bersama ini dimajukan notis saman tersebut untuk tindakan tuan selanjutnya. Pihak tuan juga dipohon untuk mengemaskini status penyelesaian saman tersebut di dalam Sistem Pengurusan Kenderaan Atas Talian (SPaKAT) yang boleh diakses melalui https://spakat.jkr.gov.my/."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="10" y="470" width="534" height="20" uuid="96e5b0d7-1fdb-45b9-9769-5397183153c1"/>
+				<textElement textAlignment="Justified">
+					<font isBold="false" isUnderline="false"/>
+					<paragraph lineSpacingSize="1.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4. Kerjasama dan perhatian pihak tuan amatlah dihargai."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="10" y="500" width="170" height="20" uuid="94b11be2-5449-435e-a5e1-53d9f87a1d10"/>
+				<textElement textAlignment="Justified">
+					<font isBold="false" isUnderline="false"/>
+					<paragraph lineSpacingSize="1.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sekian, Terima Kasih"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="410" y="96" width="134" height="14" uuid="cce59c6d-275d-4874-90f3-0f647b964819"/>
+				<textFieldExpression><![CDATA[$P{ref_number}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="410" y="111" width="134" height="14" uuid="886a8085-d003-4e4f-bd57-1a54f7ac2040"/>
+				<textFieldExpression><![CDATA[$P{ref_date}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="10" y="6" width="535" height="77" isRemoveLineWhenBlank="true" uuid="5c8ea243-be11-4ea4-9d1a-e38bfa7c9fa9">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT} == -1]]></printWhenExpression>
+				</reportElement>
+				<image>
+					<reportElement x="0" y="0" width="67" height="67" uuid="202426e5-c9cd-45b3-adb9-67a995d00092"/>
+					<imageExpression><![CDATA[$P{asset_path}+"/img/logo_negara_small.png"]]></imageExpression>
+				</image>
+				<textField>
+					<reportElement stretchType="RelativeToTallestObject" x="70" y="0" width="200" height="14" isRemoveLineWhenBlank="true" uuid="80ade1f4-13ee-4177-84e3-b5ccab7f0dc1"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["JABATAN KERJA RAYA MALAYSIA"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement stretchType="RelativeToTallestObject" x="70" y="10" width="230" height="14" isRemoveLineWhenBlank="true" uuid="74e4d8d2-91aa-4cc4-89aa-f7560c05bfe3"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Cawangan Kejuruteraan Mekanikal"]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="70" y="26" width="330" height="38" isRemoveLineWhenBlank="true" uuid="1ae2a2de-9c51-4505-8f20-ad83263e1c5e"/>
+					<textFieldExpression><![CDATA["JKR Woksyop Persekutuan \n(JKR Cawangan Kejuruteraan Mekanikal, Bahagian Perkhidmatan Harta) \nNo. 2, Jalan Arowana, Cheras \n55300 KUALA LUMPUR"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="410" y="34" width="40" height="10" uuid="3f425ce5-b0ed-4e1c-9b25-c6051fae1f9c"/>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Telefon"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="410" y="49" width="40" height="10" uuid="b8c83127-8d2f-423c-8e9b-87e5c51638e7"/>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Faks"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="450" y="34" width="10" height="10" uuid="6b3d8b04-68af-4a42-9398-5c2715cb8e87"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="450" y="49" width="10" height="10" uuid="a9f77719-ac77-4135-a4bc-551fc8110026"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement stretchType="RelativeToTallestObject" x="470" y="34" width="65" height="10" uuid="c6526ddd-4bac-447f-9e47-5d159239e5ea"/>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["03-9206 4000"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement stretchType="RelativeToTallestObject" x="470" y="49" width="65" height="10" uuid="c71cbe31-e6a3-4568-ba09-3270e41b75e1"/>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["03-9283 1285"]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="0" y="76" width="534" height="1" uuid="e7aa8897-000a-4f33-be69-3ecce61a512a"/>
+				</line>
+			</frame>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="10" y="120" width="250" height="20" isRemoveLineWhenBlank="true" uuid="ff519f5b-571a-47ec-aea2-de957b18d1b5"/>
+				<textFieldExpression><![CDATA[$F{branch_name} != null ?$F{branch_name} : $F{contractor_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="61">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="10" y="5" width="220" height="22" uuid="78194d3d-3228-4f46-8786-52744c052eb4"/>
+				<textFieldExpression><![CDATA[$P{quote}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="10" y="39" width="220" height="22" uuid="b05ca213-9ac3-4d9c-b032-0c1778753649"/>
+				<textFieldExpression><![CDATA[$P{signature}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="10" y="30" width="170" height="1" uuid="b4c40630-1f61-45ee-8447-3ad4bc2a6f2d"/>
+			</line>
+		</band>
+	</pageHeader>
+	<summary>
+		<band height="70">
+			<textField>
+				<reportElement positionType="Float" x="10" y="13" width="170" height="20" uuid="3bd82cc2-0284-4a8c-89d3-597a64b0a30c"/>
+				<textElement textAlignment="Justified">
+					<font isBold="false" isUnderline="false"/>
+					<paragraph lineSpacingSize="1.5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SALINAN KEPADA: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="340" y="26" width="60" height="14" uuid="1dffcf7a-934d-4972-82e4-0a4d5c2bc412"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tarikh"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="400" y="26" width="10" height="14" uuid="448048ca-2e36-4074-8f8d-30042298dfb4"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="340" y="11" width="60" height="14" uuid="c269688b-d000-4d0f-b0fb-7d521886739a"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ruj. Kami"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="400" y="11" width="10" height="14" uuid="ed9f2ca2-2038-4104-916e-b36531fcd668"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="7" width="100" height="1" uuid="bdca92b1-bd09-4874-bde5-9dde0274a868"/>
+			</break>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="410" y="26" width="134" height="14" uuid="655e2529-af42-4201-81a5-7b0693409f7e"/>
+				<textFieldExpression><![CDATA[$P{ref_date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="410" y="11" width="134" height="14" uuid="b292d0d2-f566-4699-9496-cb16d86577f7"/>
+				<textFieldExpression><![CDATA[$P{ref_number}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="10" y="40" width="170" height="30" uuid="9709c76b-2cf9-49c5-b167-0c6c141b101c"/>
+				<textFieldExpression><![CDATA[$P{copy_to}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

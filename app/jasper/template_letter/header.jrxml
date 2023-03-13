@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="header" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="312356b5-b398-4ebc-b8a4-cfcd2a87e69e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SpakatLocal"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="96">
+			<staticText>
+				<reportElement x="105" y="38" width="300" height="50" uuid="a1ca663f-89ab-478b-8c0c-16784d4ab4a3"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[JKR Woksyop Persekutuan
+(JKR Cawangan Kejuruteraan Mekanikal, Bahagian Perkhidmatan Harta)
+No. 2, Jalan Arowana, Cheras
+55300 KUALA LUMPUR
+]]></text>
+			</staticText>
+			<line>
+				<reportElement x="15" y="95" width="560" height="1" uuid="c6ad9bb2-b611-4965-844c-9c3c28e3c2e1"/>
+			</line>
+			<staticText>
+				<reportElement x="445" y="58" width="45" height="16" uuid="45872c6d-e62b-45db-b6ed-cd57c33b7e97"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Telefon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="68" width="32" height="20" uuid="281d9928-dfaa-42a3-a047-3d392e386fe4"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[Faks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="485" y="58" width="10" height="30" uuid="02fd2771-652b-40f0-9480-ff4b699a2c77"/>
+				<text><![CDATA[:
+:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="495" y="58" width="80" height="16" uuid="abe7a365-92c1-45be-b202-a76b5c332437"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[03-9206 4000
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="495" y="68" width="80" height="20" uuid="89d42bd8-834a-4c63-8140-cdd2cc81bb94"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[03-9283 1285]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="105" y="15" width="300" height="30" uuid="04c47a36-9be9-4fa9-9773-ceed915aca37"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JABATAN KERJA RAYA MALAYSIA
+Ketua Jurutera Mekanikal
+]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+@media only screen {
+	.table-line {
+        border-spacing: 0;
+        border-style: none;
+    }
+    .table-line thead th {
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+        border-bottom-color:#d7d7de;
+        font-family:avenir-bold !important;
+        font-size: 14px !important;
+        line-height: 12px;
+        color:#393728 !important;
+        padding-left:10px;
+        padding-top:10px;
+    }
+    .table-line thead th.highlight {
+        background-color: #f4f5f2;
+    }
+    .table-line tbody tr td {
+        border-bottom-color:#d7d7de;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        font-family: mark;
+        font-size:14px;
+        height:30px;
+        vertical-align: top !important;
+        line-height:30px Imp !important;
+        padding-left:10px;
+    }
+    .table-line tbody tr td.highlight {
+        background-color: #f4f5f2;
+    }
+    .table-line tbody tr td a {
+        font-family: mark-bold;
+        text-decoration: none;
+        font-size:14px;
+        height:18px;
+        color:#393728;
+        vertical-align: top !important;
+        line-height:16px;
+        cursor: pointer;
+    }
+    .table-line tbody tr td a:hover {
+        color:orange;
+    }
+    @media (max-width: 1200px) {
+        /*X-Large devices (large desktops, less than 1400px)*/
+		/*X-Large*/
+
+    }
+    @media (max-width: 1199.98px) {
+		/*Large devices (desktops, less than 1200px)*/
+		/*Large*/
+    }
+    @media (max-width: 991.98px) {
+		/* Medium devices (tablets, less than 992px)*/
+		/*medium*/
+    }
+    @media (max-width: 767.98px) {
+		/* Small devices (landscape phones, less than 768px)
+		/*small*/
+        @supports (-webkit-overflow-scrolling: touch) {
+            /* CSS specific to iOS devices */
+
+        }
+    }
+    @media (max-width: 575.98px) {
+		/*X-Small devices (portrait phones, less than 576px)*/
+		/*x-small*/
+        @supports (-webkit-overflow-scrolling: touch) {
+            /* CSS specific to iOS devices */
+        }
+        .table-line {
+            padding-right:10px;
+        }
+        .table-line thead th {
+            height:330px;
+        }
+    }
+}

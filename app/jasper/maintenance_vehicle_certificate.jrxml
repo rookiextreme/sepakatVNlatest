@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="assessment_vehicle_certificate" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e2bd5278-d70b-41d9-bb12-8a2512faaf54">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="231"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="758"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SpakatLocal"/>
+	<parameter name="asset_path" class="java.lang.String"/>
+	<parameter name="vehicle_id" class="java.lang.String"/>
+	<parameter name="check_is_genuine_url" class="java.lang.String"/>
+	<parameter name="table_name" class="java.lang.String">
+		<defaultValueExpression><![CDATA["assessment_gov_loan"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select b.ref_number,a.plate_no, a.engine_no, a.chasis_no, a.cert_hash_key, b.applicant_name,
+c.name, d.name as type_name, e.desc as ref_name, f.desc as state_name
+from maintenance.$P!{table_name}_vehicle a
+join maintenance.$P!{table_name} b on b.id = a.maintenance_$P!{table_name}_id
+left join vehicles.brands c on c.id = a.vehicle_brand_id 
+left join ref_sub_category_type d on d.id = a.sub_category_type_id
+join ref_workshop e on b.workshop_id = e.id
+join ref_state f on b.state_id = f.id
+where a.id = $P!{vehicle_id}]]>
+	</queryString>
+	<field name="ref_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ref_number"/>
+		<property name="com.jaspersoft.studio.field.label" value="ref_number"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+	</field>
+	<field name="plate_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="plate_no"/>
+		<property name="com.jaspersoft.studio.field.label" value="plate_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job_vehicle"/>
+	</field>
+	<field name="engine_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="engine_no"/>
+		<property name="com.jaspersoft.studio.field.label" value="engine_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job_vehicle"/>
+	</field>
+	<field name="chasis_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="chasis_no"/>
+		<property name="com.jaspersoft.studio.field.label" value="chasis_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job_vehicle"/>
+	</field>
+	<field name="cert_hash_key" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cert_hash_key"/>
+		<property name="com.jaspersoft.studio.field.label" value="cert_hash_key"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job_vehicle"/>
+	</field>
+	<field name="applicant_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="applicant_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="applicant_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="job"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="brands"/>
+	</field>
+	<field name="type_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="type_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="type_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_sub_category_type"/>
+	</field>
+	<field name="ref_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ref_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="ref_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_workshop"/>
+	</field>
+	<field name="state_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="state_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="state_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_state"/>
+	</field>
+	<detail>
+		<band height="798">
+			<componentElement>
+				<reportElement x="420" y="470" width="106" height="100" uuid="2d14cd03-c38d-471c-968e-be51ba40f771">
+					<property name="com.jaspersoft.studio.unit.margin" value="mm"/>
+				</reportElement>
+				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" margin="0" errorCorrectionLevel="M">
+					<jr:codeExpression><![CDATA[$P{check_is_genuine_url}+"?key="+$F{cert_hash_key}]]></jr:codeExpression>
+				</jr:QRCode>
+			</componentElement>
+			<staticText>
+				<reportElement x="19" y="170" width="226" height="15" uuid="9afa9401-4201-4e74-be2a-c6a9f663872d"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ADALAH DIPERAKUI BAHAWA KENDERAAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="245" y="170" width="20" height="15" uuid="ce5659e5-3403-46a6-839c-1d0f98e1a76b"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="185" width="226" height="15" uuid="4dd24190-d50c-430d-8520-d99927b424c1"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[JENIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="245" y="185" width="20" height="15" uuid="5b94f471-32ba-455b-b9c1-06ee27fd99fb"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="265" y="185" width="265" height="15" uuid="a8e7f063-bac6-408c-8c3a-8f31666f8e21"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{type_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="200" width="226" height="15" uuid="ad639607-466e-43a2-91bc-08d8e3120887"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[NO PENDAFTARAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="215" width="226" height="15" uuid="c23b9270-6032-498c-9cfa-c64f8486e359"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[NO. ENGIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="245" y="215" width="20" height="15" uuid="5f599f59-6664-4490-905b-5009fd1f753b"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="245" y="200" width="20" height="15" uuid="911724f2-b510-4cbc-9e49-8e5e734f7a35"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="265" y="200" width="265" height="15" uuid="10a3ef20-8278-4f95-8ab7-07a9231176de"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{plate_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="265" y="215" width="265" height="15" uuid="138a8c46-711c-4666-9e7d-c91d00348f18"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{engine_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="230" width="226" height="15" uuid="82b01702-0141-4183-a210-997f4eb3ba7d"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[NO. CHASIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="245" y="230" width="20" height="15" uuid="f6095d58-945a-430d-9875-a1f0ecc9eb7c"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="265" y="230" width="265" height="15" uuid="06975c3b-846f-41f8-b3f1-3cac53f35c93"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{chasis_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="245" width="226" height="15" uuid="bde997d6-c9ed-40c1-a89b-616bc2ab464d"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[TARIKH DIPERIKSA & DIUJI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="245" y="245" width="20" height="15" uuid="8bb58cfc-393c-4c28-a531-d6eb63a72b34"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="265" y="245" width="265" height="15" uuid="53af095b-d5bb-48df-b5bc-7c5f8181a50b"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[DATEFORMAT(new Date(), "dd/M/yyyy")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="19" y="290" width="511" height="75" uuid="43cf324e-0688-42c4-b7b7-bdeb6018e8bf"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Beserta alat - alat kelengkapannya telah diperiksa dan diuji di <b> JKR CKM "+$F{state_name}+"</b>  dan didapati menepati spesifikasi kontrak. Sebarang aduan dan kecacatan selepas penyerahannya hendaklah dirujuk kepada pihak pembekal selagi dalam tempoh jaminan."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="468" width="384" height="50" uuid="1025bcd8-c87c-4591-a95b-89cc38c699af"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Ketua Jurutera Mekanikal]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="265" y="170" width="265" height="15" uuid="05fcf50e-b107-4291-b237-d8a1c1856251"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="265" y="155" width="265" height="15" uuid="5d65dd03-db16-4ca4-83ba-0d6486ad990c"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{applicant_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="245" y="155" width="20" height="15" uuid="d858a513-304b-475a-9f81-963439ecda02"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="155" width="226" height="15" uuid="de03e34a-3817-4716-a526-9dbad8c6805d"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[KEPADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="5" y="777" width="545" height="3" backcolor="#030303" uuid="d02f9fd2-78e0-498c-8e69-65ea843543cc"/>
+				<text><![CDATA[Static Text]]></text>
+			</staticText>
+			<image scaleImage="RealSize">
+				<reportElement x="30" y="10" width="80" height="70" uuid="5a963d31-420d-4748-beb4-92736c2e279b"/>
+				<imageExpression><![CDATA[$P{asset_path}+"/img/logo_negara_small.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="48" y="100" width="460" height="30" uuid="0936ef4c-f8c5-4bed-ba62-0a7faaadb5df"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[SIJIL PEMERIKSAAN & PENGUJIAN KENDERAAN]]></text>
+			</staticText>
+			<image scaleImage="RealSize">
+				<reportElement x="440" y="10" width="80" height="70" uuid="41244619-1362-4c7a-ac08-51d7de204936"/>
+				<imageExpression><![CDATA[$P{asset_path}+"/img/logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="7" y="748" width="543" height="30" uuid="0f09014b-14ee-407f-a0ec-e3787a75f903"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(Sijil ini adalah cetakan komputer dan tidak memerlukan tandatangan) ]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

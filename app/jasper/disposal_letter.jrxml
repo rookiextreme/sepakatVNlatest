@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="disposal_letter" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7724440d-a39b-4641-be0d-1a36169bc83d">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="470"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="524"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="senarai_kenderaan_lupus" uuid="f7b07547-e049-4083-93c3-d958a976644a">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+		<parameter name="assessment_id" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT *
+FROM assessment.assessment_disposal_vehicle
+WHERE assessment_disposal_id=$P!{assessment_id} ]]>
+		</queryString>
+		<field name="id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="id"/>
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="assessment_disposal_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="assessment_disposal_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="assessment_disposal_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="category_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="category_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="category_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="sub_category_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="sub_category_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="sub_category_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="sub_category_type_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="sub_category_type_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="sub_category_type_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="purchase_dt" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.name" value="purchase_dt"/>
+			<property name="com.jaspersoft.studio.field.label" value="purchase_dt"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="company_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="company_name"/>
+			<property name="com.jaspersoft.studio.field.label" value="company_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="lo_no" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="lo_no"/>
+			<property name="com.jaspersoft.studio.field.label" value="lo_no"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="location" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="location"/>
+			<property name="com.jaspersoft.studio.field.label" value="location"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="original_price" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="original_price"/>
+			<property name="com.jaspersoft.studio.field.label" value="original_price"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="aset_regno" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="aset_regno"/>
+			<property name="com.jaspersoft.studio.field.label" value="aset_regno"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="nc_no" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nc_no"/>
+			<property name="com.jaspersoft.studio.field.label" value="nc_no"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="is_gover" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.name" value="is_gover"/>
+			<property name="com.jaspersoft.studio.field.label" value="is_gover"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="is_move" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.name" value="is_move"/>
+			<property name="com.jaspersoft.studio.field.label" value="is_move"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="plate_no" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="plate_no"/>
+			<property name="com.jaspersoft.studio.field.label" value="plate_no"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="engine_no" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="engine_no"/>
+			<property name="com.jaspersoft.studio.field.label" value="engine_no"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="chasis_no" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="chasis_no"/>
+			<property name="com.jaspersoft.studio.field.label" value="chasis_no"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="odometer" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="odometer"/>
+			<property name="com.jaspersoft.studio.field.label" value="odometer"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="veh_img_doc" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="veh_img_doc"/>
+			<property name="com.jaspersoft.studio.field.label" value="veh_img_doc"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="evaluation_type" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="evaluation_type"/>
+			<property name="com.jaspersoft.studio.field.label" value="evaluation_type"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="vtl_doc" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="vtl_doc"/>
+			<property name="com.jaspersoft.studio.field.label" value="vtl_doc"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="vehicle_brand_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="vehicle_brand_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="vehicle_brand_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="model_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="model_name"/>
+			<property name="com.jaspersoft.studio.field.label" value="model_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="manufacture_year" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="manufacture_year"/>
+			<property name="com.jaspersoft.studio.field.label" value="manufacture_year"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="registration_vehicle_dt" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.name" value="registration_vehicle_dt"/>
+			<property name="com.jaspersoft.studio.field.label" value="registration_vehicle_dt"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="mileage_distance" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="mileage_distance"/>
+			<property name="com.jaspersoft.studio.field.label" value="mileage_distance"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="hours_used" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="hours_used"/>
+			<property name="com.jaspersoft.studio.field.label" value="hours_used"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="delivery_service" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="delivery_service"/>
+			<property name="com.jaspersoft.studio.field.label" value="delivery_service"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="earlier_maintenance_cost" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="earlier_maintenance_cost"/>
+			<property name="com.jaspersoft.studio.field.label" value="earlier_maintenance_cost"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="current_maintenance_cost" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="current_maintenance_cost"/>
+			<property name="com.jaspersoft.studio.field.label" value="current_maintenance_cost"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="current_value" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="current_value"/>
+			<property name="com.jaspersoft.studio.field.label" value="current_value"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="post_current_value" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="post_current_value"/>
+			<property name="com.jaspersoft.studio.field.label" value="post_current_value"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="post_durability" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="post_durability"/>
+			<property name="com.jaspersoft.studio.field.label" value="post_durability"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="estimate_value_after" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="estimate_value_after"/>
+			<property name="com.jaspersoft.studio.field.label" value="estimate_value_after"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="manual_depreciation" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="manual_depreciation"/>
+			<property name="com.jaspersoft.studio.field.label" value="manual_depreciation"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="app_datetime" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="app_datetime"/>
+			<property name="com.jaspersoft.studio.field.label" value="app_datetime"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="cert_hash_key" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="cert_hash_key"/>
+			<property name="com.jaspersoft.studio.field.label" value="cert_hash_key"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="cert_ref_number" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="cert_ref_number"/>
+			<property name="com.jaspersoft.studio.field.label" value="cert_ref_number"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="in_assessment" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.name" value="in_assessment"/>
+			<property name="com.jaspersoft.studio.field.label" value="in_assessment"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="approval" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="approval"/>
+			<property name="com.jaspersoft.studio.field.label" value="approval"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="kewpa_remarks" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="kewpa_remarks"/>
+			<property name="com.jaspersoft.studio.field.label" value="kewpa_remarks"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="kewpa_remarks2" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="kewpa_remarks2"/>
+			<property name="com.jaspersoft.studio.field.label" value="kewpa_remarks2"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="assessment_vehicle_status_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="assessment_vehicle_status_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="assessment_vehicle_status_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="created_by" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="created_by"/>
+			<property name="com.jaspersoft.studio.field.label" value="created_by"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="updated_by" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="updated_by"/>
+			<property name="com.jaspersoft.studio.field.label" value="updated_by"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="foremen_dt" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="foremen_dt"/>
+			<property name="com.jaspersoft.studio.field.label" value="foremen_dt"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="foremen_by" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="foremen_by"/>
+			<property name="com.jaspersoft.studio.field.label" value="foremen_by"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="assessment_dt" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="assessment_dt"/>
+			<property name="com.jaspersoft.studio.field.label" value="assessment_dt"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="assessment_by" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="assessment_by"/>
+			<property name="com.jaspersoft.studio.field.label" value="assessment_by"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="verify_dt" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="verify_dt"/>
+			<property name="com.jaspersoft.studio.field.label" value="verify_dt"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="verify_by" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="verify_by"/>
+			<property name="com.jaspersoft.studio.field.label" value="verify_by"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="approve_dt" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="approve_dt"/>
+			<property name="com.jaspersoft.studio.field.label" value="approve_dt"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="approve_by" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="approve_by"/>
+			<property name="com.jaspersoft.studio.field.label" value="approve_by"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="evaluate_dt" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="evaluate_dt"/>
+			<property name="com.jaspersoft.studio.field.label" value="evaluate_dt"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="evaluate_by" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="evaluate_by"/>
+			<property name="com.jaspersoft.studio.field.label" value="evaluate_by"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="reason_changed" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="reason_changed"/>
+			<property name="com.jaspersoft.studio.field.label" value="reason_changed"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="created_at" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+			<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+		<field name="updated_at" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
+			<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal_vehicle"/>
+		</field>
+	</subDataset>
+	<parameter name="assessment_id" class="java.lang.String"/>
+	<parameter name="letter_ref" class="java.lang.String"/>
+	<parameter name="letter_date" class="java.lang.String"/>
+	<parameter name="up_name" class="java.lang.String"/>
+	<parameter name="ref_number" class="java.lang.String"/>
+	<parameter name="evaluate_date" class="java.lang.String"/>
+	<parameter name="car_total" class="java.lang.String"/>
+	<parameter name="no_tel" class="java.lang.String"/>
+	<parameter name="propaganda" class="java.lang.String"/>
+	<parameter name="signature_name" class="java.lang.String"/>
+	<parameter name="jawatan" class="java.lang.String"/>
+	<parameter name="woksyop" class="java.lang.String"/>
+	<parameter name="state" class="java.lang.String"/>
+	<parameter name="bahagian" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT a.department_name as dprt, a.address as address, a.postcode as poskod, b.desc as negeri, c.desc as woksyop
+FROM assessment.assessment_disposal a
+LEFT JOIN ref_state b ON a.state_id = b.id
+LEFT JOIN ref_workshop c ON a.workshop_id = c.id
+WHERE a.id=$P!{assessment_id} ]]>
+	</queryString>
+	<field name="dprt" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dprt"/>
+		<property name="com.jaspersoft.studio.field.label" value="dprt"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal"/>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="address"/>
+		<property name="com.jaspersoft.studio.field.label" value="address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal"/>
+	</field>
+	<field name="poskod" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="poskod"/>
+		<property name="com.jaspersoft.studio.field.label" value="poskod"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_disposal"/>
+	</field>
+	<field name="negeri" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="negeri"/>
+		<property name="com.jaspersoft.studio.field.label" value="negeri"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_state"/>
+	</field>
+	<field name="woksyop" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="woksyop"/>
+		<property name="com.jaspersoft.studio.field.label" value="woksyop"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_workshop"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<detail>
+		<band height="451" splitType="Stretch">
+			<textField>
+				<reportElement x="340" y="0" width="70" height="20" uuid="09933067-06e7-41ef-8a26-dc38a712d90d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ruj. Kami"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="0" width="10" height="20" uuid="af0e99de-1d38-4844-a572-4a9788037ae5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="340" y="22" width="70" height="20" uuid="39b8c99a-d308-46e9-addb-4a97655bf61d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tarikh"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="410" y="22" width="10" height="20" uuid="eb8f2a86-101b-4bd1-bf46-183cb03568af"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="420" y="0" width="120" height="20" uuid="52b42e50-8b0f-42f1-9a14-05fe5e5e0ea6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{letter_ref}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="420" y="22" width="120" height="20" uuid="6f2b6dc4-aeb4-44f0-928a-ffe02dfda921"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{letter_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="10" y="50" width="250" height="50" uuid="e9a47dc2-d37a-4a1c-aaa5-91581c68ce0d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$F{dprt},\n$F{address},\n$F{poskod},\n$F{negeri}"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="10" y="100" width="250" height="20" isRemoveLineWhenBlank="true" uuid="ed9b085e-3452-48e8-8aa5-0664591d5e59"/>
+				<textElement markup="html">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>(u.p. :"+$P{up_name}+")</b>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="130" width="100" height="20" uuid="324ca706-f31b-4295-9f0a-ce9eeb94dbc9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Tuan]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="12" y="161" width="528" height="30" isRemoveLineWhenBlank="true" uuid="3eb9d141-695c-47c2-8503-8024ec723ee2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SIJIL PERAKUAN PELUPUSAN (PEP) KENDERAAN MILIK "+$F{dprt}+", "+$F{address}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="13" y="192" width="526" height="1" uuid="db199eab-585f-4fe2-a05f-2f42912c20b1"/>
+			</line>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="10" y="200" width="529" height="30" isRemoveLineWhenBlank="true" uuid="76c2cbd0-f8c4-4a14-9b71-f57dc98a89fd"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dengan ini segala hormatnya saya merujuk kepada perkara tersebut di atas dan lanjutan daripada surat tuan no.ruj. "+$P{ref_number}+" bertarikh "+$P{evaluate_date}+" adalah berkaitan."]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="10" y="240" width="530" height="30" isRemoveLineWhenBlank="true" uuid="e2a24b62-01f5-4b1c-8bb6-82595a45a7b8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["2.	Untuk makluman, pihak kami telah menjalankan pemeriksaan ke atas <b>"+$P{car_total}+"</b> unit kenderaan milik tuan seperti dilampiran A."]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="10" y="280" width="530" height="30" isRemoveLineWhenBlank="true" uuid="cf253758-537a-49a1-877d-33a3838daa18"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["3.	Dilampirkan <b>Perakuan Pelupusan (PEP)</b> untuk tindakan selanjutnya. Sebarang pertanyaan boleh menghubungi "+$F{woksyop}+" di talian "+$P{no_tel}+"."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="10" y="320" width="170" height="20" uuid="9a9dabb2-6161-4fa3-869d-6168f02cdea7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Sekian, terima kasih]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="10" y="350" width="250" height="20" isRemoveLineWhenBlank="true" uuid="af7ad380-337d-4c15-b53e-5cdccf6ba269"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>"+$P{propaganda}+"</b>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="380" width="250" height="20" isRemoveLineWhenBlank="true" uuid="b8aeb328-aaef-47d0-a404-1640e42ecc7c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Saya yang menjalankan amanah,]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="10" y="420" width="270" height="30" isRemoveLineWhenBlank="true" uuid="8b99503b-d183-4e4d-bf1c-76ce63f37de7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>"+$P{signature_name}+"</b>\n"+$P{jawatan}+"\n"+$P{woksyop}+"\n"+$P{bahagian}+"\n"+$P{state}]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="450" width="550" height="1" uuid="c1440df1-1c9b-4130-accb-482c1626c50b"/>
+			</break>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="341" y="20" width="198" height="2" isRemoveLineWhenBlank="true" uuid="b936a684-e0ac-41b9-ba34-db24a2a16de2"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

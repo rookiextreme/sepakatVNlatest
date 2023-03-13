@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="letter-01" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" isFloatColumnFooter="true" uuid="9f309975-d918-40d5-bc5d-a013734b243a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SpakatLocal"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#BFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="b6f1186a-231b-401c-b571-fc320329651f">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="Dataset2" uuid="373cd684-4f02-4107-a7a3-ad96e6341b00">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="total_budget_formatted" class="java.lang.String"/>
+	<parameter name="workshop" class="java.lang.String"/>
+	<parameter name="officername" class="java.lang.String"/>
+	<parameter name="officerdesignation" class="java.lang.String"/>
+	<parameter name="total_budget" class="java.lang.String"/>
+	<parameter name="officer_address" class="java.lang.String"/>
+	<parameter name="appointment_dt" class="java.lang.String"/>
+	<parameter name="officer_designation" class="java.lang.String"/>
+	<parameter name="head_address" class="java.lang.String"/>
+	<parameter name="asset_path" class="java.lang.String"/>
+	<parameter name="postcode_and_state" class="java.lang.String"/>
+	<parameter name="vehicle_id" class="java.lang.String"/>
+	<parameter name="table_name" class="java.lang.String"/>
+	<parameter name="vehicle_brand" class="java.lang.String"/>
+	<parameter name="vehicle_model" class="java.lang.String"/>
+	<parameter name="ref_number" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="telno" class="java.lang.String"/>
+	<parameter name="faxno" class="java.lang.String"/>
+	<parameter name="plate_no" class="java.lang.String"/>
+	<parameter name="current_loc" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from maintenance.evaluation_template_letter_checklist]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evaluation_template_letter_checklist"/>
+	</field>
+	<field name="template_letter_type_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="template_letter_type_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="template_letter_type_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evaluation_template_letter_checklist"/>
+	</field>
+	<field name="evaluation_template_letter_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="evaluation_template_letter_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="evaluation_template_letter_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evaluation_template_letter_checklist"/>
+	</field>
+	<field name="job_detail" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="job_detail"/>
+		<property name="com.jaspersoft.studio.field.label" value="job_detail"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evaluation_template_letter_checklist"/>
+	</field>
+	<field name="syntom" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="syntom"/>
+		<property name="com.jaspersoft.studio.field.label" value="syntom"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evaluation_template_letter_checklist"/>
+	</field>
+	<field name="accessories" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="accessories"/>
+		<property name="com.jaspersoft.studio.field.label" value="accessories"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evaluation_template_letter_checklist"/>
+	</field>
+	<field name="budget" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="budget"/>
+		<property name="com.jaspersoft.studio.field.label" value="budget"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evaluation_template_letter_checklist"/>
+	</field>
+	<field name="created_by" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="created_by"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_by"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evaluation_template_letter_checklist"/>
+	</field>
+	<field name="updated_by" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="updated_by"/>
+		<property name="com.jaspersoft.studio.field.label" value="updated_by"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evaluation_template_letter_checklist"/>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evaluation_template_letter_checklist"/>
+	</field>
+	<field name="updated_at" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="evaluation_template_letter_checklist"/>
+	</field>
+	<variable name="totalPage" class="java.lang.Integer" resetType="None" incrementType="Page" calculation="Count">
+		<variableExpression><![CDATA[1]]></variableExpression>
+	</variable>
+	<variable name="totalDetail1" class="java.lang.Integer" resetType="None" incrementType="Column" calculation="Count">
+		<variableExpression><![CDATA[1]]></variableExpression>
+	</variable>
+	<group name="footer">
+		<groupFooter>
+			<band height="290">
+				<frame>
+					<reportElement positionType="Float" stretchType="ContainerBottom" x="2" y="0" width="508" height="290" isRemoveLineWhenBlank="true" uuid="5b455c74-951f-44ee-9d2d-38b4f377ae6e"/>
+					<staticText>
+						<reportElement x="0" y="80" width="211" height="19" uuid="eb284d17-af84-43eb-b2b9-52664a3e915d"/>
+						<textElement>
+							<font fontName="Arial" size="12"/>
+						</textElement>
+						<text><![CDATA[Sekian, terima kasih.]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="0" y="99" width="331" height="47" uuid="6ee6ebbd-7180-4ff7-9991-bf0eb9714609"/>
+						<textElement>
+							<font fontName="Arial" size="12" isBold="true"/>
+						</textElement>
+						<text><![CDATA[“PRIHATIN RAKYAT: DARURAT MEMERANGI COVID-19”
+
+“BERKHIDMAT UNTUK NEGARA”
+]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="0" y="156" width="242" height="22" uuid="ad9512a8-a36e-463c-b8b8-8ffad26dc6c3"/>
+						<textElement>
+							<font fontName="Arial" size="12"/>
+						</textElement>
+						<text><![CDATA[Saya yang menjalankan amanah,]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="17" y="230" width="194" height="20" uuid="e63e0a72-a585-4199-a414-9e8290447129"/>
+						<textElement>
+							<font fontName="Arial" size="12"/>
+						</textElement>
+						<text><![CDATA[JKR Woksyop Persekutuan
+]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="-1" y="214" width="20" height="20" uuid="dd107b61-1e91-4914-81c5-0cfc1c635060"/>
+						<textElement>
+							<font fontName="Arial" size="12"/>
+						</textElement>
+						<text><![CDATA[b.p]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="1" y="193" width="201" height="19" uuid="7db07034-d799-4d8c-8510-c457a932d16d"/>
+						<textElement>
+							<font fontName="arial" size="12" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{officername}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="19" y="214" width="192" height="16" uuid="374f66c2-123e-4c27-84b3-fb8965608ef9"/>
+						<textElement>
+							<font fontName="arial" size="12"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{officerdesignation}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="-1" y="5" width="490" height="30" uuid="ca6e569a-cb86-4464-a094-f6c7ac907cd6"/>
+						<textElement>
+							<font fontName="Arial" size="12"/>
+						</textElement>
+						<text><![CDATA[4.	Sekiranya terdapat pertambahan kerja-kerja pembaikan, pihak tuan boleh merujuk semula kepada pihak kami untuk tujuan pengesahan semula.
+]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="-1" y="37" width="471" height="30" uuid="1e3327c3-ef59-4380-bf4f-0a9331e0ed3b"/>
+						<textElement>
+							<font fontName="arial" size="12"/>
+						</textElement>
+						<text><![CDATA[5.	Sekiranya ingin penjelasan lanjut mengenai perkara ini, pihak tuan boleh menghubungi pegawai kami En. Asmawe bin Abd Wahab ditalian 03-9206 4000. 
+]]></text>
+					</staticText>
+				</frame>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="byPageNumber">
+		<groupExpression><![CDATA[$V{PAGE_NUMBER}]]></groupExpression>
+		<groupFooter>
+			<band height="50"/>
+		</groupFooter>
+	</group>
+	<columnHeader>
+		<band height="462" splitType="Stretch">
+			<staticText>
+				<reportElement x="420" y="70" width="52" height="16" uuid="df8cb1f6-511b-457f-9401-49465b279d58">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Telefon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="86" width="52" height="16" uuid="8b55fd47-ddfd-4546-a3a9-34266f539199">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Faks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="10" width="300" height="30" uuid="84d40173-9502-478b-9b51-3132e865a4c0"/>
+				<text><![CDATA[JABATAN KERJA RAYA MALAYSIA
+Ketua Jurutera Mekanikal
+]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="-1" y="120" width="545" height="319" isRemoveLineWhenBlank="true" uuid="d3ce1869-4815-4dbf-851f-30263eb5b37f">
+					<printWhenExpression><![CDATA[$V{PAGE_NUMBER} == 1]]></printWhenExpression>
+				</reportElement>
+				<staticText>
+					<reportElement x="315" y="0" width="90" height="20" uuid="846cd3b3-e8cc-4afa-b38d-e09a4024ae08"/>
+					<text><![CDATA[Ruj. Kami	:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="315" y="20" width="90" height="20" uuid="5621e927-07fd-4eee-8dc2-c06a571b0301"/>
+					<text><![CDATA[Tarikh		:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="405" y="0" width="140" height="20" uuid="205d49f4-27c9-4044-b935-7038e67f6956"/>
+					<textFieldExpression><![CDATA[$P{ref_number}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="405" y="20" width="140" height="20" uuid="c7264c48-e97c-4350-9c04-e556c575fbcb"/>
+					<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="5" y="150" width="80" height="20" uuid="3c1455ba-4af4-4f3c-81ba-9e0be661b12e"/>
+					<text><![CDATA[Tuan/Puan,]]></text>
+				</staticText>
+				<line>
+					<reportElement x="4" y="211" width="466" height="1" uuid="7e7e0ab2-3052-4057-a0b9-f4189e502027">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+				</line>
+				<staticText>
+					<reportElement x="4" y="220" width="466" height="18" uuid="530455a4-1755-445f-a1bb-0e05a7338e08">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Dengan segala hormatnya, kami merujuk perkara di atas.]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="4" y="170" width="466" height="41" uuid="6c0f6ff4-5898-4264-ab02-4726183ddd4a"/>
+					<textElement>
+						<font fontName="arial" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PEMERIKSAAN DAN PENILAIAN KEROSAKAN KENDERAAN JABATAN JENIS "+$P{vehicle_brand} + " "+$P{vehicle_model}+" NO. PENDAFTARAN : " +"$P{plate_no}"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="3" y="240" width="470" height="50" uuid="b0afb88d-4c13-4fc3-b942-83c1ea925b7d"/>
+					<textElement>
+						<font fontName="arial&#xA;" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA["2.	Untuk makluman pihak tuan, pihak kami telah melaksanakan pemeriksaan ke atas kenderaan berkenaan di "+$P{current_loc}+" pada "+$P{date}+" dan mengesahkan tiada kerosakan pada enjin."]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="10" y="50" width="259" height="20" uuid="0ebec8c6-3732-43a3-a788-7267ed06357e"/>
+					<textElement>
+						<font fontName="arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{officer_designation}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="11" y="72" width="258" height="47" uuid="1a00eedf-27de-4b18-a68c-bd51dbfa34b7"/>
+					<textElement>
+						<font fontName="arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{officer_address}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="10" y="119" width="259" height="21" uuid="6def8ef4-b342-46b1-bbc0-eaeaa12671d4"/>
+					<textElement>
+						<font fontName="arial&#xA;" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{postcode_and_state}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="3" y="290" width="491" height="20" uuid="a15216f4-6260-4ef3-b5e2-d640ce6fab81"/>
+					<textElement>
+						<font fontName="Arial" size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[3. Sehubungan dengan itu, kerja pembaikan yang dicadangkan adalah seperti berikut :  ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="-2" y="439" width="528" height="20" isRemoveLineWhenBlank="true" uuid="251df9a5-8297-4dab-bb4a-693f0856c70d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<staticText>
+					<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="-2" y="0" width="40" height="20" forecolor="#FFFFFF" backcolor="#5E5E5E" uuid="e9293298-ce56-48a6-966e-55d3e6c1dbeb"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Bil]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="38" y="0" width="201" height="20" forecolor="#FFFFFF" backcolor="#5E5E5E" uuid="24ccdcb5-d982-4aa2-a61e-d28afd719658"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Perincian Kerja]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="239" y="0" width="80" height="20" forecolor="#FFFFFF" backcolor="#5E5E5E" uuid="0ff80771-5fee-449c-97c6-35b3d80e62ca"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[Simptom/
+Kerosakan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="377" y="0" width="120" height="20" forecolor="#FFFFFF" backcolor="#5E5E5E" uuid="6fb6a349-c158-4c7c-8651-b969a15584dc"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[Keperluan Penukaran
+Alat Ganti
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="319" y="0" width="59" height="20" forecolor="#FFFFFF" backcolor="#5E5E5E" uuid="a2c29c94-b44a-4d5a-9885-a4fb564b616c"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Anggaran]]></text>
+				</staticText>
+			</frame>
+			<textField>
+				<reportElement stretchType="ElementGroupHeight" x="81" y="40" width="325" height="65" isPrintWhenDetailOverflows="true" uuid="1c2b12c5-96db-49fa-8119-40dbf3527294">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{head_address} != null ? $P{head_address} : "JKR Woksyop Persekutuan (JKR Cawangan Kejuruteraan Mekanikal, "+
+ "Bahagian Perkhidmatan Harta)No. 2, JalanArowana, Cheras 45500, Selangor"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="1" y="109" width="554" height="1" backcolor="#424242" uuid="b27a8c18-33b6-4a7e-a159-ecea082da8d6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<image scaleImage="RealSize">
+				<reportElement x="1" y="10" width="69" height="53" uuid="7c212af2-4293-4fc0-b40e-f6d762d40fa8"/>
+				<imageExpression><![CDATA[$P{asset_path} != null ? $P{asset_path}+"/img/logo_negara_small.png": "http://spakat.test/my-assets/img/logo_negara_small.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="481" y="70" width="75" height="16" uuid="f6191e7e-15c6-4a25-8b79-17eb0cced024"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{telno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="481" y="86" width="75" height="16" uuid="16c42d67-0973-4b33-a17b-02be526d1f2a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{faxno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="472" y="70" width="9" height="16" uuid="5c917a3a-fdd2-4ee9-8b6b-2d995031d909"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="86" width="9" height="16" uuid="de19cd04-c841-4d1d-8f8b-43b38c02fa24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement stretchType="ContainerHeight" x="40" y="0" width="197" height="34" isRemoveLineWhenBlank="true" uuid="e69ec860-f38e-401a-8ce4-89db88a440e5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_detail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="40" height="34" uuid="1bbfb77d-9c7d-4ff3-b500-0895fed78488"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["2."+$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="0" width="77" height="34" uuid="211fc1d2-59cd-4d37-9925-7718dfbb8573"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{syntom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="2" width="61" height="30" uuid="c99e4e14-d10d-4eeb-855c-82f50e45503b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{budget}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="372" y="2" width="121" height="30" uuid="61c891fe-2514-42ac-8e6a-ca262890b940"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{accessories}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="3" y="0" width="540" height="50" uuid="816701f2-68ae-4189-be6e-2814dd258ddf"/>
+				<imageExpression><![CDATA[$P{asset_path} != null ? $P{asset_path}+"/img/template_letter/img/footer_001.png": "http://spakat.test/my-assets/img/template_letter/img/footer_001.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="40">
+			<staticText>
+				<reportElement x="303" y="0" width="100" height="30" uuid="d39d9afb-b121-4c6e-9c35-cb96873f0676"/>
+				<text><![CDATA[Static Text 2]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+</jasperReport>

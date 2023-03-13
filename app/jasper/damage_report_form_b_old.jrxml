@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="damage_report_form" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4abdc35d-d7c5-455f-adb7-09789a820760">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<subDataset name="Dataset1" uuid="2f8011ca-cbbc-4eaf-9e7a-f4727a229749">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+		<queryString language="SQL">
+			<![CDATA[select * from assessment.assessment_safety]]>
+		</queryString>
+		<field name="id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="id"/>
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="ref_number" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ref_number"/>
+			<property name="com.jaspersoft.studio.field.label" value="ref_number"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="applicant_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="applicant_name"/>
+			<property name="com.jaspersoft.studio.field.label" value="applicant_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="phone_no" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="phone_no"/>
+			<property name="com.jaspersoft.studio.field.label" value="phone_no"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="email" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="email"/>
+			<property name="com.jaspersoft.studio.field.label" value="email"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="address" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="address"/>
+			<property name="com.jaspersoft.studio.field.label" value="address"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="postcode" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="postcode"/>
+			<property name="com.jaspersoft.studio.field.label" value="postcode"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="state_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="state_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="state_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="department_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="department_name"/>
+			<property name="com.jaspersoft.studio.field.label" value="department_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="appointment_dt1" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="appointment_dt1"/>
+			<property name="com.jaspersoft.studio.field.label" value="appointment_dt1"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="appointment_dt2" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="appointment_dt2"/>
+			<property name="com.jaspersoft.studio.field.label" value="appointment_dt2"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="appointment_dt3" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="appointment_dt3"/>
+			<property name="com.jaspersoft.studio.field.label" value="appointment_dt3"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="appointment_dt" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="appointment_dt"/>
+			<property name="com.jaspersoft.studio.field.label" value="appointment_dt"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+			<fieldDescription><![CDATA[This is last appoointment Data once selected by approval/verifier]]></fieldDescription>
+		</field>
+		<field name="is_other_app_dt" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.name" value="is_other_app_dt"/>
+			<property name="com.jaspersoft.studio.field.label" value="is_other_app_dt"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="agency_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="agency_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="agency_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="workshop_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="workshop_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="workshop_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="app_status_id" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="app_status_id"/>
+			<property name="com.jaspersoft.studio.field.label" value="app_status_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="created_by" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="created_by"/>
+			<property name="com.jaspersoft.studio.field.label" value="created_by"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="updated_by" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="updated_by"/>
+			<property name="com.jaspersoft.studio.field.label" value="updated_by"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="created_at" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+			<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+		<field name="updated_at" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
+			<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		</field>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[select * from assessment.assessment_safety]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="ref_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ref_number"/>
+		<property name="com.jaspersoft.studio.field.label" value="ref_number"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="applicant_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="applicant_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="applicant_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="phone_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="phone_no"/>
+		<property name="com.jaspersoft.studio.field.label" value="phone_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="email"/>
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="address"/>
+		<property name="com.jaspersoft.studio.field.label" value="address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="postcode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="postcode"/>
+		<property name="com.jaspersoft.studio.field.label" value="postcode"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="state_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="state_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="state_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="department_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="department_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="department_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="appointment_dt1" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="appointment_dt1"/>
+		<property name="com.jaspersoft.studio.field.label" value="appointment_dt1"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="appointment_dt2" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="appointment_dt2"/>
+		<property name="com.jaspersoft.studio.field.label" value="appointment_dt2"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="appointment_dt3" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="appointment_dt3"/>
+		<property name="com.jaspersoft.studio.field.label" value="appointment_dt3"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="appointment_dt" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="appointment_dt"/>
+		<property name="com.jaspersoft.studio.field.label" value="appointment_dt"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+		<fieldDescription><![CDATA[This is last appoointment Data once selected by approval/verifier]]></fieldDescription>
+	</field>
+	<field name="is_other_app_dt" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="is_other_app_dt"/>
+		<property name="com.jaspersoft.studio.field.label" value="is_other_app_dt"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="agency_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="agency_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="agency_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="workshop_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="workshop_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="workshop_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="app_status_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="app_status_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="app_status_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="created_by" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="created_by"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_by"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="updated_by" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="updated_by"/>
+		<property name="com.jaspersoft.studio.field.label" value="updated_by"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="created_at" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<field name="updated_at" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.label" value="updated_at"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_safety"/>
+	</field>
+	<title>
+		<band height="80" splitType="Stretch"/>
+	</title>
+	<detail>
+		<band height="465" splitType="Stretch">
+			<line direction="BottomUp">
+				<reportElement x="0" y="190" width="551" height="1" uuid="f7b008ae-b01c-4aa4-97cd-645bbc545d33"/>
+			</line>
+			<textField>
+				<reportElement x="70" y="270" width="460" height="20" uuid="d5f19934-61d2-454c-9712-f5708b183405"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(a) Haribulan memeriksa : .....20.08.2021......TOYOTA HIACE.......( KKM )......WTB8710"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="290" width="410" height="20" uuid="559486c1-a821-4d17-b9d8-8cace82432d9"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(b) Perkara Kerosakan:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="320" width="180" height="40" uuid="4e66775b-d7de-4e38-855f-330697b71327"/>
+				<textFieldExpression><![CDATA["(Sila catatkan sama ada \n kerosakan itu melibatkan kerja- \n kerja membaiki atau pengantian)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="320" width="140" height="20" uuid="781be1ab-108e-4689-9a62-880861294c8b"/>
+				<textFieldExpression><![CDATA["Hendaklah dibaiki \n RM"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50"/>
+	</detail>
+</jasperReport>

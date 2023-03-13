@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="letter_of_guarantee" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="02386615-5e90-47c7-adb4-0a2c421800d2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="list_kenderaan" uuid="039968a9-172f-4523-af1a-8ac9e3492bf1">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+		<parameter name="assessment_new_id" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT b.name as brand_name, a.model_name as model_name, a.plate_no, a.chasis_no, a.engine_no
+FROM assessment.assessment_new_vehicle a
+JOIN vehicles.brands b ON b.id = a.vehicle_brand_id
+WHERE a.assessment_new_id = $P!{assessment_new_id}]]>
+		</queryString>
+		<field name="brand_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="brand_name"/>
+			<property name="com.jaspersoft.studio.field.label" value="brand_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="brands"/>
+		</field>
+		<field name="model_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="model_name"/>
+			<property name="com.jaspersoft.studio.field.label" value="model_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_new_vehicle"/>
+		</field>
+		<field name="plate_no" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="plate_no"/>
+			<property name="com.jaspersoft.studio.field.label" value="plate_no"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_new_vehicle"/>
+		</field>
+		<field name="chasis_no" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="chasis_no"/>
+			<property name="com.jaspersoft.studio.field.label" value="chasis_no"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_new_vehicle"/>
+		</field>
+		<field name="engine_no" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="engine_no"/>
+			<property name="com.jaspersoft.studio.field.label" value="engine_no"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_new_vehicle"/>
+		</field>
+	</subDataset>
+	<parameter name="assessment_new_id" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT a.applicant_name, a.ic_no, b.plate_no, b.chasis_no, a.department_name, a.address, a.phone_no, a.postcode, 
+c.desc as state_name
+FROM assessment.assessment_new a
+JOIN assessment.assessment_new_vehicle b on b.assessment_new_id = a.id
+JOIN ref_state c ON c.id = a.state_id
+WHERE a.id =  $P!{assessment_new_id}]]>
+	</queryString>
+	<field name="applicant_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="applicant_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="applicant_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_new"/>
+	</field>
+	<field name="ic_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ic_no"/>
+		<property name="com.jaspersoft.studio.field.label" value="ic_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_new"/>
+	</field>
+	<field name="plate_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="plate_no"/>
+		<property name="com.jaspersoft.studio.field.label" value="plate_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_new_vehicle"/>
+	</field>
+	<field name="chasis_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="chasis_no"/>
+		<property name="com.jaspersoft.studio.field.label" value="chasis_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_new_vehicle"/>
+	</field>
+	<field name="department_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="department_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="department_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_new"/>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="address"/>
+		<property name="com.jaspersoft.studio.field.label" value="address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_new"/>
+	</field>
+	<field name="phone_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="phone_no"/>
+		<property name="com.jaspersoft.studio.field.label" value="phone_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_new"/>
+	</field>
+	<field name="postcode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="postcode"/>
+		<property name="com.jaspersoft.studio.field.label" value="postcode"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_new"/>
+	</field>
+	<field name="state_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="state_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="state_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_state"/>
+	</field>
+	<detail>
+		<band height="771" splitType="Stretch">
+			<textField>
+				<reportElement x="70" y="111" width="160" height="20" uuid="37d373d5-303a-405b-81b0-5a4aede4e4e4"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["................................................"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="121" width="120" height="20" uuid="f8ae751f-7958-4ca1-aa62-a905c934e34d"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(Ketua Jabatan)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="141" width="80" height="20" uuid="55fa5824-b031-4d19-822d-29eb073be214"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tuan,"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="171" width="420" height="20" uuid="02aa7906-95fd-47ed-823a-1fd31807342d"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Saya "+ $F{applicant_name} + " No. K/P "+$F{ic_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="183" width="180" height="20" uuid="988fa067-8c59-49f8-8507-49f65d19f6a9"/>
+				<textElement markup="html">
+					<font fontName="Arial" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(Nama seperti dalam kad pengenalan)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="203" width="420" height="30" uuid="e78e6ed4-9bc6-44a1-b0c7-97057f6d0246"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pembekal bagi Kenderaan Kerajaan dari jabatan "+ $F{department_name}+" No. Pendaftaran seperti di lampiran"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="261" width="420" height="40" uuid="8bb92abf-ab57-494f-b352-0e3ee30d31d1"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dengan ini saya mengesahkan bersetuju menyerahkan kenderaan milik seperti jabatan di atas kepada JKR Woksyop bagi menjalankan kerja-kerja pemeriksaan dan bersetuju dengan syarat- syarat seperti berikut:- "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="311" width="40" height="20" uuid="56468ade-acda-452e-a843-94d0f8855423"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="311" width="380" height="60" uuid="633a306d-c324-4dae-97b3-a100060e9396"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pemeriksaan yang dijalankan ke atas kenderaan oleh pihak JKR untuk pengesahan nombor enjin, nombor casis dan potong sambung adalah secara visual/ mata kasar sahaja. Sekiranya disyaki tidak mematuhi Akta Pengangkutan Jalan 1987, JKR boleh mengagalkan kenderaan dan membuat sebarang rujukan kepada Jabatan Pengangkutan Jalan."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="381" width="40" height="20" uuid="dadf5b20-882d-4c96-b31d-e8f5f76bfc15"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["2."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="381" width="380" height="30" uuid="ee2ca3e4-339f-4c56-9081-2de8c1ee9a0e"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pemeriksaan JKR hanya terhad kepada keadaan kenderaan semasa hari dan waktu pemeriksaan yang dijalankan."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="421" width="40" height="20" uuid="fb247444-6349-4128-bee2-c4a391d495c2"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["3."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="421" width="380" height="50" uuid="be6ba086-606b-4d4e-905f-0e3a048a80d2"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["JKR tidak akan menanggung apa-apa liabiliti dan tidak akan menanggung sebarang ganti rugi Pemilik Kenderaan Kerajaan atau agensi atau pun pembekal terhadap apa-apa kerugian, liabiliti, kehilangan, kerosakan, kecederaan, dan/atau apa-apa kos ditanggung berkaitan dengan dan/atau disebabkan oleh pemeriksaan kenderaan tersebut oleh JKR."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="481" width="40" height="20" uuid="9cbb2531-e5a4-423d-8cf3-f30d46b2fb8e"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="481" width="380" height="50" uuid="42fdb019-20b5-4a6c-82fd-b334ecac9c55"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Saya juga bersetuju untuk membaikpulih atau menukar sesuatu bahagian atau peralatan atau keseluruhan sistem jika hasil dari pemeriksaan atas kenderaan menemui ketidakpatuhan kepada spesifikasi asal yang dicadang atau mengalami kecacatan yand difikirkan menganggu operasi atau prestasi mahupun keselamatan."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="541" width="40" height="20" uuid="fad7c519-9756-489a-aaf5-8991c77f3771"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="541" width="380" height="50" uuid="96665d7a-7158-4395-98e1-ecffe714441c"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pemilik Kenderaan Kerajaan dan Pembekal seterusnya mengakujanji melepaskan hak dari menuntut apa-apa gantirugi, kehilangan, perbelanjaan, kos atau tuduhan yang mungkin timbul yang mana boleh dipertanggungjawabkan ke atas JKR setelah pemeriksaan dijalankan ke atas kenderaan tersebut."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="616" width="100" height="20" uuid="58b722ca-a73b-4171-a715-99b3e9ca0a7a"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tandatangan"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="671" width="100" height="20" uuid="746bad2d-1e7a-4076-8723-7c93c54e586e"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Alamat"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="710" width="100" height="20" uuid="2024c1c5-cfd0-4b08-9350-66ec7d0014d9"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No. Tel"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="616" width="118" height="20" uuid="8d416ce8-163b-4601-b984-618f69c9f658"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": _________________________"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="671" width="20" height="20" uuid="00551821-5bc9-41c5-b523-e27e342b906d"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="710" width="20" height="20" uuid="fa23a137-50ba-4722-a858-536e661c827a"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="329" y="651" width="50" height="20" uuid="e7b3e4ee-e718-4903-9dd5-c7762f3c53f6"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tarikh"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="379" y="651" width="20" height="20" uuid="27388853-e50d-4ad8-ad3d-0bd629c67333"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="70" y="740" width="420" height="1" uuid="a85791ae-639e-43c4-a067-4c9e3ad0d647"/>
+				<graphicElement>
+					<pen lineWidth="4.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="70" y="744" width="420" height="1" uuid="0a54e3e2-6c13-4296-91b0-b929a6ab20f0"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="70" y="242" width="420" height="21" uuid="c5096a21-33cf-44b9-b43d-fdd350f542c6"/>
+				<textElement markup="html">
+					<font fontName="Arial" size="10" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dari syarikat "+PROPER($F{department_name})]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="398" y="651" width="120" height="20" uuid="74b14953-c423-439f-a7bd-926941979624"/>
+				<textFieldExpression><![CDATA[DATEFORMAT( new java.util.Date(), "dd/MM/yyyy")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="710" width="120" height="20" uuid="135ca2ae-131f-453b-a993-1eeb592bea93"/>
+				<textFieldExpression><![CDATA[$F{phone_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="671" width="137" height="39" uuid="f4592f7b-2caf-4e31-88d1-c1cb0632cafd"/>
+				<textFieldExpression><![CDATA[PROPER($F{department_name}+", "+$F{address}+", "+$F{postcode}+", "+$F{state_name})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="650" width="100" height="20" uuid="390a9ab1-f4de-47d1-9720-6b441251a7cd"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nama"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="650" width="20" height="20" uuid="41e2d6e9-f8c5-4cba-99e9-7c65c9cdc356"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="650" width="120" height="20" uuid="2d6b5a27-cbc8-4330-84cb-ee5c35c097a6"/>
+				<textFieldExpression><![CDATA[$F{applicant_name}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="802">
+			<break>
+				<reportElement x="0" y="0" width="550" height="1" uuid="381c85a8-6a8a-4e30-bde6-170ecc4fd78c"/>
+			</break>
+			<componentElement>
+				<reportElement style="Table_TD" mode="Transparent" x="70" y="119" width="420" height="90" forecolor="#000000" backcolor="#E8A841" uuid="137f0408-517e-4d4d-bedd-1cdd9acc1d8f">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="list_kenderaan" uuid="8259ea9b-417b-4baa-a1c4-ca8131abec44">
+						<datasetParameter name="assessment_new_id">
+							<datasetParameterExpression><![CDATA[$P{assessment_new_id}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="30" uuid="b425eb5d-2320-408e-8f80-bc70e5aa425e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="30" height="30" backcolor="#E8A841" uuid="b75887d9-4acf-4b9b-843e-82363a15ff2d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[No]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="30" height="30" uuid="db5f88b1-2133-47b4-a630-55a213252a29"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="102074ce-9454-431b-8bef-c480311f4df1">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" backcolor="#E8A841" uuid="f573e1fa-b05e-4ee9-9214-89e478b135fe"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Pengeluar]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="30" uuid="6d01a862-054c-445d-bd8c-ebe447773e95"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{brand_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="cab514cf-714a-4c64-9984-e1f7d6e21cf1">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" backcolor="#E8A841" uuid="2308cee1-a303-474d-84e7-5b2878479f28"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[Model]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="30" uuid="f8ac0d06-72d8-4eec-bea2-5d4d631f934d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{model_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="99920e7c-015d-4a3c-99fe-48ddd7ef3309">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" backcolor="#E8A841" uuid="4ef2088b-c98a-4b09-abcc-6847d2d89235"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[No Pendaftaran]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="30" uuid="30a76f32-7331-4228-ba1c-c9bad06b65fe"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{plate_no}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="f8f458d9-ea92-4c00-9472-ac992abd8050">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" backcolor="#E8A841" uuid="4ee98db6-f6ec-43b0-8149-8b2cfdfbec4d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[No Chasis]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="30" uuid="bd1f4f3a-106b-4d30-b173-f2e88b49fbef"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{chasis_no}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="c9350952-ce34-4598-8017-4f7ca5ba7480">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" backcolor="#E8A841" uuid="8e4d96ca-d3e5-4ead-a3c5-b0430a56eb30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10"/>
+								</textElement>
+								<text><![CDATA[No Enjin]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="30" uuid="cd398c9c-5d57-4cf1-8833-072e498a92b5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{engine_no}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<line>
+				<reportElement x="70" y="800" width="420" height="1" uuid="c3f9734b-3ec0-44f6-aed2-f5cf26f61908"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="70" y="796" width="420" height="1" uuid="69c5bc95-8425-47d8-90bd-faf801167ed9"/>
+				<graphicElement>
+					<pen lineWidth="4.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

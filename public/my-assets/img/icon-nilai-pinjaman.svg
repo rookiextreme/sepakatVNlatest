@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 72.5 100.9" style="enable-background:new 0 0 72.5 100.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#238E13;stroke-width:1.7008;stroke-linecap:round;}
+	.st2{fill:#238E13;}
+	.st3{font-family:'ArialRoundedMTBold';}
+	.st4{font-size:28.129px;}
+	.st5{fill:none;stroke:#FFFFFF;stroke-width:1.7008;stroke-linecap:round;stroke-linejoin:round;}
+	.st6{fill:none;stroke:#C1C1C1;stroke-width:1.7008;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<g id="Layer_2">
+	<polygon class="st0" points="1,92.1 0.8,84.5 2.9,79 9.9,70.2 13.2,68.1 39.9,68.1 59,80.8 65.9,80.6 69.4,82.3 70.5,84.6 
+		71.5,90.3 63.3,94 8.6,93.8 5.3,94 	"/>
+	<ellipse class="st0" cx="16.3" cy="93.8" rx="6.9" ry="6.4"/>
+	<ellipse class="st0" cx="56.5" cy="93.8" rx="6.9" ry="6.4"/>
+</g>
+<g id="Layer_1">
+	<g>
+		<ellipse class="st1" cx="15.8" cy="93.4" rx="6.9" ry="6.7"/>
+		<path class="st1" d="M43.7,70.6C42.3,69,40.4,68,38.4,68H14.5c-2.1,0-4.2,1.1-5.4,2.8l-6.3,8.8L1,83.9v8.3L5.4,94h3.5"/>
+		<path class="st1" d="M67.3,92.5l4.1-1.9l-0.6-5.8c-0.4-2.1-2-3.9-4.1-4.2"/>
+		<path class="st1" d="M29.6,94.2h20"/>
+		<ellipse class="st1" cx="56.4" cy="93.4" rx="6.9" ry="6.7"/>
+	</g>
+	<path class="st1" d="M29.8,72v5.5c0,1.4,1,2.5,2.3,2.5h11.2"/>
+	<path class="st1" d="M14.9,72l-2.5,3.7c-1.2,1.8,0.2,4.2,2.3,4.2h9.9"/>
+	<text transform="matrix(1 0 0 1 27.4035 23.5733)" class="st2 st3 st4">$</text>
+	<circle class="st2" cx="55.9" cy="72.9" r="10.1"/>
+	<polyline class="st5" points="52.2,74.4 53.7,76 59.5,70.2 	"/>
+	<polyline class="st6" points="35.9,33.4 35.9,60.3 24.9,50.6 	"/>
+	<line class="st6" x1="39" y1="58.4" x2="47.5" y2="50.4"/>
+</g>
+</svg>

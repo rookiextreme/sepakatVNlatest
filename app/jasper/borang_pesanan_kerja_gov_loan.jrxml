@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="borang_pesanan_kerja" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="50f950c0-3a04-4095-8d16-de3bc8bdeda7">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<subDataset name="senarai_kenderaan" uuid="8fa9c15d-08de-490d-8fea-297708e99da7">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+		<parameter name="assessment_new_id" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT model_name
+FROM assessment.assessment_new_vehicle
+WHERE assessment_new_id = $P!{assessment_new_id}]]>
+		</queryString>
+		<field name="model_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="model_name"/>
+			<property name="com.jaspersoft.studio.field.label" value="model_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_new_vehicle"/>
+		</field>
+	</subDataset>
+	<subDataset name="senarai_jenis" uuid="d1594689-9dc0-48f0-bafb-1561dd48e9f5">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+		<parameter name="assessment_new_id" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT b.name as jenis
+FROM assessment.assessment_new_vehicle a
+JOIN ref_sub_category_type b ON b.id = a.sub_category_type_id
+WHERE a.assessment_new_id = $P!{assessment_new_id}]]>
+		</queryString>
+		<field name="jenis" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="jenis"/>
+			<property name="com.jaspersoft.studio.field.label" value="jenis"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="ref_sub_category_type"/>
+		</field>
+	</subDataset>
+	<subDataset name="senarai_no_pendaftaran" uuid="39e7d5db-ae7c-4688-b334-e5c5bbe3900a">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+		<parameter name="assessment_new_id" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT plate_no
+FROM assessment.assessment_new_vehicle
+WHERE assessment_new_id = $P!{assessment_new_id}]]>
+		</queryString>
+		<field name="plate_no" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="plate_no"/>
+			<property name="com.jaspersoft.studio.field.label" value="plate_no"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="assessment_new_vehicle"/>
+		</field>
+	</subDataset>
+	<parameter name="assessment_gov_loan_id" class="java.lang.String"/>
+	<parameter name="total_formatted" class="java.lang.String"/>
+	<parameter name="model_name" class="java.lang.String"/>
+	<parameter name="jenis" class="java.lang.String"/>
+	<parameter name="no_pendaftaran" class="java.lang.String"/>
+	<parameter name="ptj_no" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT a.applicant_name, a.address as address, a.postcode as postcode, a.department_name as department_name
+ ,e.code as no_kerja, c.desc as workshop_name, d.desc as state_name, a.hod_title as jawatan,
+(SELECT SUM(b.vehicle_price)	as grand_total
+	FROM assessment.assessment_gov_loan_vehicle b
+	WHERE b.assessment_gov_loan_id = a.id
+),
+(SELECT COUNT(b.id)	as bilangan
+	FROM assessment.assessment_gov_loan_vehicle b
+	WHERE b.assessment_gov_loan_id = a.id
+)
+FROM assessment.assessment_gov_loan a
+JOIN ref_workshop c ON c.id = a.workshop_id
+JOIN ref_state d ON d.id = a.state_id
+JOIN assessment.assessment_bpk_no e ON e.id = a.bpk_id
+WHERE a.id = $P!{assessment_gov_loan_id}]]>
+	</queryString>
+	<field name="applicant_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="applicant_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="applicant_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_gov_loan"/>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="address"/>
+		<property name="com.jaspersoft.studio.field.label" value="address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_gov_loan"/>
+	</field>
+	<field name="postcode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="postcode"/>
+		<property name="com.jaspersoft.studio.field.label" value="postcode"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_gov_loan"/>
+	</field>
+	<field name="department_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="department_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="department_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_gov_loan"/>
+	</field>
+	<field name="no_kerja" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="no_kerja"/>
+		<property name="com.jaspersoft.studio.field.label" value="no_kerja"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_bpk_no"/>
+	</field>
+	<field name="workshop_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="workshop_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="workshop_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_workshop"/>
+	</field>
+	<field name="state_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="state_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="state_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_state"/>
+	</field>
+	<field name="jawatan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="jawatan"/>
+		<property name="com.jaspersoft.studio.field.label" value="jawatan"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_gov_loan"/>
+	</field>
+	<field name="grand_total" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="grand_total"/>
+		<property name="com.jaspersoft.studio.field.label" value="grand_total"/>
+	</field>
+	<field name="bilangan" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="bilangan"/>
+		<property name="com.jaspersoft.studio.field.label" value="bilangan"/>
+	</field>
+	<detail>
+		<band height="181" splitType="Stretch">
+			<staticText>
+				<reportElement x="50" y="100" width="79" height="21" uuid="9710b3c1-f1c2-4e65-ade4-57a1978ba689"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Daripada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="130" width="79" height="21" uuid="1736813b-7edb-47e1-bef0-8b9a9943d9e7"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Kepada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="159" width="79" height="21" uuid="990302a1-de18-41d8-a092-e74689a26593"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Perkara]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="100" width="9" height="21" uuid="80c3dba2-b259-481b-bd54-cc53d7ad521f"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="130" width="9" height="21" uuid="fbf5517e-0559-401c-96b8-08320d94b199"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="159" width="9" height="21" uuid="73cbec53-d9d4-4886-848d-aab5d280becc"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="81" width="30" height="11" uuid="bc3ab6db-d65a-4f49-b8e7-e1286b442f23"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Tarikh]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="44" width="361" height="32" uuid="2822d4d0-8705-4d16-af90-d45b54e4ba11"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BORANG PESANAN KERJA]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="490" y="81" width="61" height="21" uuid="32c4a205-3053-4070-92c9-3718b9f09934"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[DATEFORMAT(new java.util.Date(), "dd/MM/yyyy")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="10" width="61" height="31" uuid="95b0bfcc-1c48-4bce-a56d-87c6ca1a14a2"/>
+				<textFieldExpression><![CDATA["BPK 1/94"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="100" width="301" height="21" uuid="c7de175e-09ed-4ed1-ac27-fc2423b14fab"/>
+				<textFieldExpression><![CDATA["Seksyen Penilaian "+$F{workshop_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="130" width="301" height="21" uuid="884054da-fcde-44e2-85d2-7a505d319ce4"/>
+				<textFieldExpression><![CDATA[PROPER("unit kewangan")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="150" y="160" width="301" height="21" uuid="ca4da58a-8c34-47f5-8d25-2314aa1e1591"/>
+				<text><![CDATA[Permohonan Nombor Kerja Berpenggal]]></text>
+			</staticText>
+		</band>
+		<band height="61">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="149" y="11" width="351" height="50" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="0a34449e-6699-4116-89b5-47bd7029193b"/>
+				<textFieldExpression><![CDATA[PROPER($F{jawatan}+"\n"+$F{department_name} +"\n"+$F{address} + "\n"+$F{postcode} + "\n"+$F{state_name})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="129" y="10" width="9" height="21" uuid="64ee21a0-a217-4ee9-972a-19c4b073312c"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="49" y="10" width="79" height="21" uuid="0baffcb8-9b36-4d1c-a241-7746d940c98d"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Pelanggan]]></text>
+			</staticText>
+		</band>
+		<band height="31">
+			<staticText>
+				<reportElement x="49" y="10" width="79" height="21" uuid="0757d75e-517e-4f4f-acd4-710507583537"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[No. PTJ]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="149" y="10" width="281" height="21" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="3826cfbd-33f6-4d8a-b289-4e29631081ba"/>
+				<textFieldExpression><![CDATA[$P{ptj_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="129" y="10" width="9" height="21" uuid="0eb6c049-9911-4a9d-be07-f679f1e8a66e"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement x="130" y="4" width="9" height="21" uuid="87ccbf94-a100-437d-a50e-1452f96dc0f8"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="4" width="79" height="21" uuid="99963aa1-29a4-46af-bdf6-aa78b25db429"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Model]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="150" y="4" width="281" height="21" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="25a40330-56af-401f-ba16-be6b1cc2b9fd"/>
+				<textFieldExpression><![CDATA[$P{model_name}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="26">
+			<staticText>
+				<reportElement x="130" y="5" width="9" height="21" uuid="13218c6e-7485-4eb6-8b73-14c0854eb355"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="5" width="79" height="21" uuid="147f568d-2025-49ee-9d26-f927a7fc9cb3"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Jenis]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="150" y="5" width="281" height="21" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="dd31a99a-b93c-4ba1-a88d-afcff3e35901"/>
+				<textFieldExpression><![CDATA[PROPER($P{jenis})]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="61">
+			<staticText>
+				<reportElement x="50" y="3" width="79" height="21" uuid="be6e20fd-6eaa-459a-8de3-677a28a99c8c"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Jenis Kerja]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="32" width="9" height="21" uuid="505a1745-ffee-463d-8977-02734a9cf55d"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="3" width="301" height="20" uuid="f7238fe1-d365-473b-a1bc-6e276181435a"/>
+				<text><![CDATA[Memeriksa dan Baik Pulih]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="32" width="79" height="21" uuid="3ff49309-88d7-4e48-b880-060f421c4728"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[No. JKR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="3" width="9" height="21" uuid="07d267be-f481-4433-b1fe-68b977593139"/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="50" y="60" width="462" height="1" uuid="caaa2a98-8e90-432b-80b6-bcdde6cc3822">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</line>
+		</band>
+		<band height="28">
+			<staticText>
+				<reportElement x="50" y="7" width="79" height="21" uuid="b12d0117-aebf-4f24-919e-0f6292f25d8c"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[No. JPJ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="7" width="9" height="21" uuid="9314bd36-3015-41c1-b584-d9b62160550d"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="151" y="7" width="281" height="21" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="56c8b7bc-de36-4832-9e59-e3d7e1c3f3f0"/>
+				<textFieldExpression><![CDATA[$P{no_pendaftaran}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="55">
+			<textField>
+				<reportElement x="132" y="9" width="301" height="46" uuid="d2e2e188-0a2f-4fd1-99ed-d1628cf6fda0"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[UPPER($P{total_formatted} )+" RINGGIT MALAYSIA SAHAJA \n ("+$F{bilangan}+" BIL) = RM "+String.format("%.2f",$F{grand_total})]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="230">
+			<staticText>
+				<reportElement x="50" y="149" width="179" height="21" uuid="c743231d-359a-4f15-859a-76128338e979"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[No.Kerja]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="250" y="10" width="161" height="21" uuid="da45b73d-fa0f-435c-87db-38da8f565711"/>
+				<textFieldExpression><![CDATA["RM "+ String.format("%.2f",$F{grand_total})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="40" width="179" height="21" uuid="30924b51-09e9-4f44-9dca-ff4e4aba0a30"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[No. LO/Waran/DLL (Nyatakan)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="209" width="9" height="21" uuid="f0433b17-1716-4c2c-ab9d-06e7cd8d6d0e"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="179" width="179" height="21" uuid="ab423fdf-7aed-4205-8e5b-f63f526ca520"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Tandatangan]]></text>
+			</staticText>
+			<line>
+				<reportElement x="49" y="104" width="460" height="1" uuid="24ad8bb1-8496-4089-b544-952dc0a55e63">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="230" y="179" width="9" height="21" uuid="96af4877-aa37-483f-8d8b-14d51d045130"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="70" width="9" height="21" uuid="488e9f8b-0460-419b-92d3-66c164fad7a5"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="149" width="9" height="21" uuid="fc40a965-f64d-4a76-a99f-795701d732ef"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="40" width="9" height="21" uuid="b7384f99-e478-4075-8eb2-f47f27463240"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="250" y="149" width="161" height="21" uuid="9baba085-3b88-4278-8e0b-e83514a2f721"/>
+				<textFieldExpression><![CDATA[$F{no_kerja}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="50" y="119" width="179" height="21" uuid="06180b5e-b23f-47c6-8aeb-ae5924138115"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Kegunaan Bahagian Perancang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="10" width="79" height="21" uuid="158d63cc-4d70-43bc-b1ca-9e93df1e3a66"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Anggaran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="70" width="179" height="21" uuid="760906c3-55be-4718-85d9-058b786f9248"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[T/Tangan Penguasa Bahagian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="209" width="179" height="21" uuid="f6c16560-c0d8-4c50-be07-0ce9c5c8a66d"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Tarikh]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="10" width="9" height="21" uuid="222b44a3-1718-4d87-bb7d-4d28da4b7962"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="119" width="9" height="21" uuid="acc0383f-8cee-4471-8eed-3ee4891b7825"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="94" width="179" height="21" uuid="a702f285-3423-4f72-a012-de1146245f72"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[*Sila potong mana yang tidak berkenaan]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

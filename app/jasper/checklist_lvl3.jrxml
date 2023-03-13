@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="checklist_lvl3" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="5" bottomMargin="5" uuid="9e8bdc4f-d9a8-47c3-9ab2-d2e35e064452">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SpakatLocal"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="lvl2_id" class="java.lang.Integer"/>
+	<parameter name="index_no_lvl1" class="java.lang.Integer"/>
+	<parameter name="index_no_lvl2" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select a.id, a.note, a.is_pass, b.component from assessment.assessment_form_check_lvl3 a
+join public.ref_component_checklist_lvl3 b on b.id = a.checklistlvl3_id
+where a.formchecklistlvl2_id = $P{lvl2_id}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl3"/>
+	</field>
+	<field name="note" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="note"/>
+		<property name="com.jaspersoft.studio.field.label" value="note"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl3"/>
+	</field>
+	<field name="is_pass" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="is_pass"/>
+		<property name="com.jaspersoft.studio.field.label" value="is_pass"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_form_check_lvl3"/>
+	</field>
+	<field name="component" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="component"/>
+		<property name="com.jaspersoft.studio.field.label" value="component"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ref_component_checklist_lvl3"/>
+	</field>
+	<detail>
+		<band height="15">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="240" height="10" isRemoveLineWhenBlank="true" uuid="f3b9e031-44d5-4c3e-8f4a-6b224f6a08ca">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box bottomPadding="3"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$P{index_no_lvl1}+"."+$P{index_no_lvl2}+"."+$V{REPORT_COUNT}+"."+$F{component}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="460" y="0" width="84" height="10" isRemoveLineWhenBlank="true" uuid="e9848390-4b60-4f64-a640-ee8aa81e2444"/>
+				<box bottomPadding="3"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{is_pass} == true ? "Lulus" : "Gagal"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="240" y="0" width="150" height="10" isRemoveLineWhenBlank="true" uuid="ee11e3cd-bd28-4e9a-bb52-413c5fdbeeaf"/>
+				<box bottomPadding="3"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[($F{note} != null ? $F{note} : "-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="10" width="500" height="1" uuid="85b7b9c4-f22f-4000-934b-f2e4b93dc4e3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box bottomPadding="3">
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

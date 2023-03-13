@@ -1,0 +1,1 @@
+@json($summon_summary_list)

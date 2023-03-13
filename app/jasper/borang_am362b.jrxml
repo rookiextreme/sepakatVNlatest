@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="borang_am362b" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a6a42716-d805-4410-85d7-74b812696ced">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SpakatLocal"/>
+	<parameter name="assessment_accident_id" class="java.lang.String"/>
+	<parameter name="estimate_price" class="java.lang.String"/>
+	<parameter name="total_damages" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT b.model_name as model_name, b.assessment_dt as assessment_dt, b.plate_no as plate_no, b.total as total, 
+c.name as brand_name, b.estimate_price as estimate_price, d.department_name as department
+FROM assessment.assessment_accident_vehicle b
+JOIN vehicles.brands c ON c.id =  b.vehicle_brand_id
+JOIN assessment.assessment_accident d ON d.id = b.assessment_accident_id
+WHERE b.assessment_accident_id = $P!{assessment_accident_id}]]>
+	</queryString>
+	<field name="model_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="model_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="model_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_accident_vehicle"/>
+	</field>
+	<field name="assessment_dt" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="assessment_dt"/>
+		<property name="com.jaspersoft.studio.field.label" value="assessment_dt"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_accident_vehicle"/>
+	</field>
+	<field name="plate_no" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="plate_no"/>
+		<property name="com.jaspersoft.studio.field.label" value="plate_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_accident_vehicle"/>
+	</field>
+	<field name="total" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="total"/>
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_accident_vehicle"/>
+	</field>
+	<field name="brand_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="brand_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="brand_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="brands"/>
+	</field>
+	<field name="estimate_price" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="estimate_price"/>
+		<property name="com.jaspersoft.studio.field.label" value="estimate_price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_accident_vehicle"/>
+	</field>
+	<field name="department" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="department"/>
+		<property name="com.jaspersoft.studio.field.label" value="department"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="assessment_accident"/>
+	</field>
+	<title>
+		<band height="801" splitType="Stretch">
+			<textField>
+				<reportElement x="45" y="338" width="481" height="21" uuid="722e624a-561c-4df5-944e-da43a3aa1736"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["Anggaran Tafsiran Pembaikan : " + new java.text.DecimalFormat("RM #,##0.00").format(Double.valueOf(($F{estimate_price})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="317" width="481" height="21" uuid="f8cc7387-02c9-4090-9e73-01a85baf10e3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["PERKARA : " +$P{total_damages}+ " SAHAJA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="275" width="481" height="21" uuid="1fb0a4ef-4b16-4620-902c-e44370849821"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["SEPERTI DILAMPIRKAN"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="359" width="481" height="21" uuid="ba7c0d28-7b12-4d40-ba14-037e2f6ce41a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["Ringgit Malaysia "+$P{estimate_price}+" Sahaja"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="29" y="159" width="510" height="75" uuid="2849d53d-d2a0-4bac-be42-871458349576"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[DATEFORMAT($F{assessment_dt}, "dd.MM.yyyy") +" "+ $F{brand_name} +" "+ $F{model_name} + " ( "+$F{department}+" )  " + $F{plate_no}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="6" y="9" width="542" height="1" uuid="222d44ca-1761-4496-abfa-df4e46fa60aa"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="4" y="7" width="546" height="1" uuid="d45724a6-862a-4436-baf9-096c768f47db"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="4" y="7" width="1" height="793" uuid="c3c50c3e-1343-4e3f-ad10-6d2e267af84e"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="6" y="9" width="1" height="790" uuid="c97bc086-2967-433c-ad23-04ea3e877e56"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="7" y="798" width="541" height="1" uuid="8084b8ca-6372-4580-b07e-d3c52f4d8cde"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="4" y="800" width="547" height="1" uuid="c68f553d-e69c-4541-8ba3-462b3020c55b"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="550" y="7" width="1" height="793" uuid="84240222-fcb3-4803-869b-dfd154c961c3"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="547" y="9" width="1" height="790" uuid="2ec86283-fd10-4c40-89fc-9860915b86f1"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="801">
+			<textField>
+				<reportElement x="280" y="91" width="238" height="21" uuid="f2c1f2c7-5e28-4a8d-b534-e32cb9da1076"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("RM #,##0.00").format(Double.valueOf(($F{estimate_price})))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="116" width="468" height="21" uuid="06c58ebb-bc0e-4175-83e9-45c20cedec48"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["Ringgit Malaysia "+$P{estimate_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="51" y="176" width="468" height="21" uuid="0c6e8dbf-29e1-4334-87d5-ed0bb08ba85b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["GANTI DAN BAIKI SAHAJA"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="6" y="9" width="1" height="790" uuid="1465ac4d-745f-47e3-852a-6f5fe35fd8f4"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="4" y="7" width="1" height="793" uuid="f4ded663-d3f6-4d34-96f2-e47623a6a9d7"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="4" y="800" width="547" height="1" uuid="825b3ccb-62fa-4c2a-ae55-8c122e20dfc1"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="7" y="798" width="541" height="1" uuid="1b372b58-315f-4d1c-8502-f50784ee3020"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="547" y="9" width="1" height="790" uuid="72a2f25b-260a-4634-b4f7-5b9e89898f70"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="550" y="7" width="1" height="793" uuid="e40a44c7-b0ec-4503-b6a0-8a6147f25b45"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="6" y="9" width="542" height="1" uuid="d8dbfee8-4362-46f0-a126-e08ccf324974"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="4" y="7" width="546" height="1" uuid="deb9e3de-5816-4f34-8fb3-24d2e24b632f"/>
+				<graphicElement>
+					<pen lineWidth="0.7"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>
