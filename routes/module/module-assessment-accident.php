@@ -48,7 +48,6 @@ Route::group(['prefix' => 'accident', 'as' => '.accident', 'middleware' => 'auth
         $RefComponentChecklistLvl1 = RefComponentChecklistLvl1::whereHas('hasAssessmentType', function($q){
             $q->where('code', '01');
         });
-
         return view('assessment.accident.accident-register', [
             'detail' => $detail,
             'agency_list' => $agency_list,

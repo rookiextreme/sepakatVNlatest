@@ -314,7 +314,7 @@ class AssessmentNewVehicleDAO
             'vehicle_id' => $request->vehicle_id,
         ]);
         return [
-            'AssessmentFormCheckLvl1List' => $AssessmentFormCheckLvl1List->get(), 
+            'AssessmentFormCheckLvl1List' => $AssessmentFormCheckLvl1List->get(),
             'status_code' => $request->status_code ? $request->status_code : 'all_inprogress'
         ];
     }
@@ -425,7 +425,6 @@ class AssessmentNewVehicleDAO
         $checkExistFormLvl3 = AssessmentFormCheckLvl3::where('vehicle_id', $request->vehicle_id)->get();
 
         if(count($checkExistFormLvl3)>0){
-
             foreach ($checkExistFormLvl3 as $CheckList){
                 // Log::info($request['form_check_lvl3_component_id_'.$CheckList->id]);
                 // Log::info($request['form_note_lvl3_component_id_'.$CheckList->id]);
@@ -436,7 +435,7 @@ class AssessmentNewVehicleDAO
                             'form_note_lvl3_component_id_'.$CheckList->id => 'required',
                         ],
                         [
-                            'form_note_lvl3_component_id_'.$CheckList->id.'.required' => 'Sila isikan Catatan jika gagal',
+                            'form_note_lvl3_component_id_'.$CheckList->id.'.required' => $CheckList->id.'Sila isikan Catatan jika gagal',
                         ]);
 
                         if ($validator->fails()) {

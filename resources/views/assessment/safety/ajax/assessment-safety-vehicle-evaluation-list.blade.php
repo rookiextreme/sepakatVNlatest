@@ -33,7 +33,6 @@
                     <td class="text-center">
                         {{-- {{$vehicle->hasAssessmentVehicleStatus->code == "04"}} --}}
                         <div class="d-flex justify-content-center">
-
                                 <button style="height: 30px;"
                                     type="button"
                                     class="btn cux-btn small"

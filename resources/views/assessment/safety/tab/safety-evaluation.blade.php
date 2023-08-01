@@ -73,7 +73,7 @@ $status_code = Request('status_code') ? Request('status_code') : 'all_inprogress
             $('#assessment_safety_vehicle_evaluation').html(result);
         });
     }
-    
+
 
     assessmentVehicleEvaluate = function(self){
         $(self).parent().find('#close').hide();

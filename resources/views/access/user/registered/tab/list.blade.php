@@ -5,7 +5,7 @@
     $sort_field = Request('sort_field') ? Request('sort_field') : 'name';
     $sort_by = Request('sort_by') ? Request('sort_by') : 'desc';
     $acc_unverified = Request('acc_unverified') ? Request('acc_unverified') : 0;
-    
+
 @endphp
 <div class="row">
     <div class="col-md-8">
@@ -15,17 +15,17 @@
         <div class="btn-group mt-0 mt-md-0">
             <button id="setWorkshopAll" class="btn cux-btn bigger" data-bs-toggle="modal" disabled data-bs-target="#setWorkshopModal"  type="button"><i class="fal fa-ban text-danger"></i> Set/Tukar Woksyop/Lokasi/Cawangan</button>
         </div>
-        
+
         <div class="btn-group mt-2 mt-md-0 mt-sm-0">
             <button id="revokeAll" class="btn cux-btn bigger" data-bs-toggle="modal" disabled data-bs-target="#revokeUserModal" type="button" value="Edit"><i class="fal fa-trash-alt text-primary"></i> Buang</button>
-        
+
             @if($acc_unverified == 1)
             <button id="resendLinkVerifyAll" class="btn cux-btn bigger" data-bs-toggle="modal" disabled data-bs-target="#resendLinkVerifyModal" type="button" value="Edit"><i class="fal fa-paper-plane text-primary"></i> Hantar Pautan Verifikasi</button>
             @endif
             {{-- <button id="lockAll" class="btn cux-btn bigger" data-bs-toggle="modal" disabled data-bs-target="#lockAllModal" onclick="showPrompt('lock')" type="button"><i class="fal fa-key text-danger"></i> Kunci Akses</button> --}}
         </div>
     </div>
-    
+
     <div class="col-md-4 mt-2 mt-md-0 float-md-end">
         <div class="input-group">
             <input data-sort-by="{{$sort_by}}" data-sort-field="{{$sort_field}}" data-mode="searching" id="searching" type="search" onkeyup="loadUserPage(1, '{{$register_purpose}}', this);" class="form-control search" placeholder="Carian Nama/Kad Pengenalan" value="{{$search}}">
@@ -44,7 +44,7 @@
                 <th class="lcal-3">
                     <label class="pt-3">
                         Nama
-                    </label> 
+                    </label>
                     <div class="btn-group-vertical float-end">
                         <a onclick="loadUserPage({{$page}}, '{{$register_purpose}}', this)" data-sort-by="asc" data-sort-field="name" class="btn btn-xs btn-link p-0 pe-1 ps-1 cursor-pointer {{$sort_by == 'asc' && $sort_field == 'name' ? 'is_sorted' : ''  }}">
                             a-z <i class="fas fa-sort-up"></i>
@@ -52,12 +52,12 @@
                         <a onclick="loadUserPage({{$page}}, '{{$register_purpose}}', this)" data-sort-by="desc" data-sort-field="name" class="btn btn-xs btn-link p-0 pe-1 ps-1 cursor-pointer {{$sort_by == 'desc' && $sort_field == 'name' ? 'is_sorted' : ''  }}">
                             z-a <i class="fas fa-sort-down"></i>
                         </a>
-                    </div>     
-                </th> 
+                    </div>
+                </th>
                 <th class="lcal-4">
                     <label class="pt-3">
                         Emel
-                    </label> 
+                    </label>
                     <div class="btn-group-vertical float-end">
                         <a onclick="loadUserPage({{$page}}, '{{$register_purpose}}', this)" data-sort-by="asc" data-sort-field="email" class="btn btn-xs btn-link p-0 pe-1 ps-1 cursor-pointer {{$sort_by == 'asc' && $sort_field == 'email' ? 'is_sorted' : ''  }}">
                             a-z <i class="fas fa-sort-up"></i>
@@ -88,7 +88,7 @@
                 <tr data-user-id="{{$user->id}}"
                 @if($user->detail)
                     @if($user->detail->hasWorkshop)
-                        data-workshop-id="{{$user->detail->hasWorkshop->id}}" 
+                        data-workshop-id="{{$user->detail->hasWorkshop->id}}"
                     @endif
                     @if($user->detail->hasPlacement)
                         data-placement-id="{{$user->detail->hasPlacement->id}}"
@@ -97,17 +97,17 @@
                         data-branch-id="{{$user->detail->hasBranch->id}}"
                     @endif
                 @endif
-                
+
                 >
                     <td class="del" style="width: 50px;">
                         <input class="form-check-input" name="chkdel" id="chkdel" type="checkbox" value="{{$user->id}}"/>
                     </td>
-                    <td class="key"><a >{{$user->name}}</a></td> 
+                    <td class="key"><a >{{$user->name}}</a></td>
                     <td class="key leftline"><a href="#" data-bs-toggle="modal"  data-bs-target="#userDetail" onclick="getUserDetail({{$user->id}})" >{{$user->email}}</a></td>
                     {{--  <td>{{$user->detail->identity_no}}</td>  --}}
                     {{--  <td>{{$registerPurpose[$user->detail->register_purpose]}}</td>  --}}
                     <td class="text-left">
-        
+
                         @if(count($user->roles))
                             @if(empty($user->getRoleDesc($user->roles[0]->name)))
                                 Set Peranan
